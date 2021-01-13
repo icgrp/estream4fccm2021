@@ -1,9 +1,14 @@
+ifndef XILINX_SDX
+  $(error Environment variable XILINX_SDX is required and should point to SDx install area. For example, you can source /opt/Xilinx/SDx/2018.3/settings.sh)
+endif
+
+
 ws=workspace
-vivado_source=/opt/Xilinx/SDx/2018.3/settings64.sh
+vivado_source=$(XILINX_SDX)/settings64.sh
 hls_prj=hls_prj
 #ip_name=circ_buff_read_many128 circ_buff_write_many128
 ip_name=read write
-hls_target=$(foreach n, $(ip_name), $(ws)/$(hls_prj)/estream_$(n)/circ_buff_$(n)_many128/syn/verilog/circ_buff_$(n)_many128.v)
+hls_target=$(ws)/$(hls_prj)/estream_write/circ_buff_write_many128/syn/verilog/circ_buff_write_many128.v
 hls_script=$(foreach n, $(ip_name), script/run_circ_buff_$(n)_many128.sh)
 hls_c_src=$(foreach n, $(ip_name), $(hls_prj)/estream_$(n)/c_src/circ_buff_$(n)_many_128.cpp)
 vivado_v_src=v_src/design_1_wrapper.v
@@ -15,8 +20,6 @@ sdk_target=$(ws)/vivado_prj/u96_demo/u96_demo.sdk/core3/src/lscript.ld
 
 
 all: $(sdk_target) 
-
-
 
 $(sdk_target): $(vivado_target) script/qsub_run_xsdk.sh $(sdk_tcl) 
 	cp ./script/qsub_run_xsdk.sh $(ws)/vivado_prj/
@@ -38,10 +41,6 @@ $(hls_target):  $(hls_script) $(hls_c_src)
 	cp $(hls_script)  $(ws)/$(hls_prj) 
 	cd $(ws)/$(hls_prj) && ./run_circ_buff_read_many128.sh
 	cd $(ws)/$(hls_prj) && ./run_circ_buff_write_many128.sh
-
-
-sb:
-	echo $(sdk_target)
 
 clean:
 	rm -rf $(ws)
