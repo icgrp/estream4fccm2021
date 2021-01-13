@@ -1,0 +1,4 @@
+#ifndef XCIRC_BUFF_WRITE_128_JUMP_H
+#define XCIRC_BUFF_WRITE_128_JUMP_H
+
+#endif
