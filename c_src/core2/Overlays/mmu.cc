@@ -398,7 +398,7 @@ void synchronize()
 	}
 	while(*ptr != ACTIVE_CORES)
 	{
-		usleep(1);
+		usleep(1000);
 	}
 }
 

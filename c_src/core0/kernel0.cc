@@ -51,10 +51,11 @@ int kernel_pl_mix( pr_flow::memory_t mem )
 		printf("HW: %d (core0->core1) * 2 (core1->core2) * 2 (core2->core3) -1 (core3->core0) = %d\n", i, receive_data[i]);
 	}
 
+	printf("\n\nAll test DONE!\n");
+
 	synchronize();
 
 
-	printf("\n\nAll test DONE!\n");
 
 
 	return 0;
