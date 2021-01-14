@@ -2,15 +2,15 @@
 ## Description 
 This is a tutorial to show how to use software (SW) stream links and hardware
 (HW) stream links to connect 4 ARM cores and FPGA fabrics together. The 4 ARMs
-can communicate with each other by SW streams. The Fabrics can ARMs can communicate
-with each other by HW streams. For the demo, the data sent by core0 will go through
+can communicate with each other by SW streams. The FPGA fabrics and ARMs can communicate
+with each other by HW streams. For this demo, the data sent by core0 will go through
 core1, core2, core3 and final get back to core0, as figure below. 
 
 ![](/images/estream.png)
 
-By using SW streams, core0 will final get data_send*2*2-2. If we use HW streams,
+By using SW streams, core0 will final get data_send\*2\*2-2. If we use HW streams,
 the 'my_design' in the FPGA fabrics will add extra 10 to the data. By using HW 
-streams, the core0 will finally get data_send*2*2-2+10.
+streams, the core0 will finally get data_send\*2\*2-2+10.
  
 
 ## Tutorial 1
