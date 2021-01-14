@@ -33,7 +33,7 @@ void kernel_pl_mix( pr_flow::memory_t mem )
 
 	for(i=0; i<DATA_BYTE_SIZE/4; i++){
 		data = STREAM_READ(Core2_sw1);
-		STREAM_WRITE(Core2_sw2, data+10);
+		STREAM_WRITE(Core2_sw2, data*2);
 	}
 
 	for(i=0; i<DATA_BYTE_SIZE/4; i++){

@@ -30,9 +30,30 @@ source the settings64.sh file again as step 3.
 6. Set the SDK workspace to **\<your local machine\>/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
 7. Build the 4 SDK projects mannually for the 4 ARM cores.
 
-![](/images/estream.png)
 ![](/images/build.jpg)
 
+8. Try to launch on hardware once to let SDK automatically create a run configuration.
+We can modify it next.
+
+![](/images/run_config.jpg)
+
+9. Before run the 4 cores, we should connect the UART to the board. Click the green
+plus sign in **SDK Terminal** console. 
+
+![](/images/UART.jpg)
+
+Select the right UART port.
+
+![](/images/PORT.jpg)
+
+10. Click Run->Run Configurations. Make sure you check **Reset entire system**, 
+**Reset APU**, and **Program FPGA**.
+![](/images/download.jpg)
+
+10. Select **Application** tab, and select the elf for 4 cores.
+![](/images/elf.jpg)
+
+11. Click **Run**. You should see the results in **SDK Terminal** console.
 
 
 
