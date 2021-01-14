@@ -18,3 +18,8 @@ streams, the core0 will finally get data_send*2*2-2+10.
 [vivado 2018.3](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html).
 2. The out-of-box vivado does not include u96-v2 board definition. You can download
 the bdf from [here](https://github.com/Avnet/bdf). Copy **./ultra96v2** to **\<Vivado directory\>/Vivado/2018.3/data/boards/board_files/**.
+3. In the terminal source your settings.sh file according to your vivado installation
+location.
+````c
+source /opt/Xilinx/Vivado/2018.3/settings64.sh
+````
