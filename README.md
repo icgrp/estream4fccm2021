@@ -22,6 +22,12 @@ the bdf from [here](https://github.com/Avnet/bdf). Copy **./ultra96v2** to **\<V
 location.
 ````c
 source /opt/Xilinx/Vivado/2018.3/settings64.sh
-````
 4. In the home directory of this repo, type **make**. The final SDK project could
 be found under **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
+5. Launch Xilinx SDK by type **xsdk**. If you open a new terminal, you should
+source the settings64.sh file again as step 3.
+6. Set the SDK workspace to **\<your local machine\>/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
+7. Build the 4 SDK projects mannually for the 4 ARM cores.
+~[](images/build.jpg)
+
+
