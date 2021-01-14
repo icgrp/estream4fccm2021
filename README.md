@@ -17,4 +17,4 @@ streams, the core0 will finally get data_send*2*2-2+10.
 1. The demo is developed with vivado 2018.3 and Xilinx SDK 2018.3. You can install
 [vivado 2018.3](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html).
 2. The out-of-box vivado does not include u96-v2 board definition. You can download
-the bdf from [here](https://github.com/Avnet/bdf). Copy **./ultra96v2** to **<Vivado directory>/Vivado/2018.3/data/boards/board_files/**.
+the bdf from [here](https://github.com/Avnet/bdf). Copy **./ultra96v2** to **\<Vivado directory\>/Vivado/2018.3/data/boards/board_files/**.
