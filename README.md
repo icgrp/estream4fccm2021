@@ -37,7 +37,7 @@ We can modify it next.
 
 ![](/images/run_config.jpg)
 
-9. Before run the 4 cores, we should connect the UART to the board. Click the green
+9. Before running the 4 cores, we should connect the UART to the board. Click the green
 plus sign in **SDK Terminal** console. 
 
 ![](/images/UART.png)
