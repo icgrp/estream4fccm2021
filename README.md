@@ -40,7 +40,7 @@ We can modify it next.
 9. Before run the 4 cores, we should connect the UART to the board. Click the green
 plus sign in **SDK Terminal** console. 
 
-![](/images/UART.jpg)
+![](/images/UART.png)
 
 Select the right UART port.
 
@@ -54,6 +54,6 @@ Select the right UART port.
 ![](/images/elf.jpg)
 
 11. Click **Run**. You should see the results in **SDK Terminal** console.
-
+![](/images/results.jpg)
 
 
