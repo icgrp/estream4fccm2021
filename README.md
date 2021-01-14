@@ -29,6 +29,7 @@ source the settings64.sh file again as step 3.
 6. Set the SDK workspace to **\<your local machine\>/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
 7. Build the 4 SDK projects mannually for the 4 ARM cores.
 
+![](/images/estream.png)
 ![](/images/build.jpg)
 
 
