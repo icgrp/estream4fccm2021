@@ -20,8 +20,9 @@ streams, the core0 will finally get data_send*2*2-2+10.
 the bdf from [here](https://github.com/Avnet/bdf). Copy **./ultra96v2** to **\<Vivado directory\>/Vivado/2018.3/data/boards/board_files/**.
 3. In the terminal source your settings.sh file according to your vivado installation
 location.
-````c
+```c
 source /opt/Xilinx/Vivado/2018.3/settings64.sh
+```
 4. In the home directory of this repo, type **make**. The final SDK project could
 be found under **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
 5. Launch Xilinx SDK by type **xsdk**. If you open a new terminal, you should
