@@ -13,7 +13,7 @@ the 'my_design' in the FPGA fabrics will add extra 10 to the data. By using HW
 streams, the core0 will finally get data_send*2*2-2+10.
  
 
-## Tutorial
+## Tutorial 1
 1. The demo is developed with vivado 2018.3 and Xilinx SDK 2018.3. You can install
 [vivado 2018.3](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html).
 2. The out-of-box vivado does not include u96-v2 board definition. You can download
@@ -54,6 +54,60 @@ Select the right UART port.
 ![](/images/elf.jpg)
 
 11. Click **Run**. You should see the results in **SDK Terminal** console.
-![](/images/results.jpg)
+
+![](/images/results.png)
+
+## Tutorial 2
+The Tutorial 1 can show you how to run the software ARM cores. This tutorial will
+show you how to modify the FPGA Fabrics.
+1. Open the vivado project under **estream_fccm2021/estream4fccm2021/workspace/vivado_prj/u96_demo**.
+![](/images/my_design.png)
+
+2. You can see **my_design** moudle in the block diagram. Open the corresponding
+verilog file, you can see the data is increased by 10. You can modify the verilog
+by adding 100.
+![](/images/add10.png)
+
+3. Recompile the vivado vivado project. You may have some frequency attributes erros.
+Double click the stream port for **my_design** module, and change the frequency 
+attributes to 300000000.
+![](/images/300M.png)
+
+4. After compilation, export the hdf file as below.
+![](/images/export.jpg)
+
+Check including bitstream
+![](/images/bit.png)
+
+
+5. Go back to SDK project, and update the hdf files by clicking OK.
+![](/images/update.png)
+
+
+6. Recompile every SDK projects for the 4 cores and launch the hardware debugging
+as step 10 in tutorial 1. You should see the core0 will final get data_send\*2\*2-2+100.
+![](/images/add100.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
