@@ -1,10 +1,10 @@
-ifndef XILINX_SDX
-  $(error Environment variable XILINX_SDX is required and should point to SDx install area. For example, you can source /opt/Xilinx/SDx/2018.3/settings.sh)
+ifndef XILINX_VIVADO
+  $(error Environment variable XILINX_VIVADO is required and should point to Vivado install area. For example, you can source /opt/Xilinx/Vivado/2018.3/settings.sh)
 endif
 
 
 ws=workspace
-vivado_source=$(XILINX_SDX)/settings64.sh
+vivado_source=$(XILINX_VIVADO)/settings64.sh
 hls_prj=hls_prj
 #ip_name=circ_buff_read_many128 circ_buff_write_many128
 ip_name=read write
@@ -39,8 +39,9 @@ $(hls_target):  $(hls_script) $(hls_c_src)
 	mkdir -p $(ws)
 	rm -rf ./$(ws)/$(hls_prj) && cp -rf $(hls_prj) ./$(ws)/
 	cp $(hls_script)  $(ws)/$(hls_prj) 
-	cd $(ws)/$(hls_prj) && ./run_circ_buff_read_many128.sh
-	cd $(ws)/$(hls_prj) && ./run_circ_buff_write_many128.sh
+	cd $(ws)/$(hls_prj) && ./run_circ_buff_read_many128.sh $(vivado_source)
+	cd $(ws)/$(hls_prj) && ./run_circ_buff_write_many128.sh $(vivado_source)
+
 
 clean:
 	rm -rf $(ws)
