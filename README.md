@@ -23,3 +23,5 @@ location.
 ````c
 source /opt/Xilinx/Vivado/2018.3/settings64.sh
 ````
+4. In the home directory of this repo, type **make**. The final SDK project could
+be found under **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
