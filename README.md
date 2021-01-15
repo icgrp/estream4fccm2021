@@ -65,22 +65,32 @@ We can modify it next.
 The Tutorial 1 can show you how to run the software ARM cores. This tutorial will
 show you how to modify the FPGA Fabrics.
 1. Open the vivado project under **estream_fccm2021/estream4fccm2021/workspace/vivado_prj/u96_demo**.
+  * from command line: vivado &
+  * Open Project and select `estream_fccm2021/estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.xpr`
+  * Open Block Diagram
 
 ![Image:Vivado Block Diagram for Design](./images/my_design.png)
 
 2. You can see **my_design** moudle in the block diagram. Open the corresponding
-verilog file, you can see the data is increased by 10. You can modify the verilog
-by adding 100.
+verilog file (under source, select `my_design.v`), you can see the data is increased by 10. You can modify the verilog by adding 100.
 
 ![Image:Verilog Design](./images/add10.png)
 
-3. Recompile the vivado vivado project. You may have some frequency attributes erros.
-Double click the stream port for **my_design** module, and change the frequency 
+3. Recompile the vivado vivado project. You may have some frequency attributes errors (or lack of clock).
+ * Double click the stream port for **my_design** module, and change the frequency 
 attributes to 300000000.
+ * Do this for both ports (s_axis and m_axis)
 
 ![Image:Set Frequency](./images/300M.png)
 
-4. After compilation, export the hdf file as below.
+4. Run Synthesis.
+   * Ignore error about ACP exluded from addressable master space?
+
+5. Run Implementation.
+
+6. Generate Bistream.
+
+7. After compilation, export the hdf file as below.
 
 ![Image:Export HDF](./images/export.jpg)
 
@@ -89,12 +99,12 @@ Check including bitstream.
 ![Image:Include Bitstream](./images/bit.png)
 
 
-5. Go back to SDK project, and update the hdf files by clicking OK.
+8. Go back to SDK project, and update the hdf files by clicking OK.
 
 ![Image:Update HDF in SDK](./images/update.png)
 
 
-6. Recompile every SDK projects for the 4 cores and launch the hardware debugging
+9. Recompile every SDK projects for the 4 cores and launch the hardware debugging
 as step 10 in tutorial 1. You should see the core0 will final get data_send\*2\*2-2+100.
 
 ![Image:Rerun with modified FPGA design](./images/add100.png)
