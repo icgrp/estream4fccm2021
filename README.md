@@ -39,27 +39,27 @@ source the settings64.sh file again as step 3.
 8. Before running the 4 cores, we should connect the UART to the board. Click the green
 plus sign in **SDK Terminal** console. 
 
-![UART Selection](images/UART.png)
+![Create Terminal](images/UART.png)
 
 Select the right UART port.
 
-![](/images/PORT.jpg)
+![Select UART Port](images/PORT.jpg)
 
 9. Try to launch on hardware once to let SDK automatically create a run configuration.
 We can modify it next.
 
-![](/images/run_config.jpg)
+![Run Configuration](images/run_config.jpg)
 
 10. Click Run->Run Configurations. Make sure you check **Reset entire system**, 
 **Reset APU**, and **Program FPGA**.
-![](/images/download.jpg)
+![Configure](images/download.jpg)
 
 10. Select **Application** tab, and select the elf for 4 cores.
-![](/images/elf.jpg)
+![Set elf files for cores](images/elf.jpg)
 
 11. Click **Run**. You should see the results in **SDK Terminal** console.
 
-![](/images/results.png)
+![Run](images/results.png)
 
 ## Tutorial 2
 The Tutorial 1 can show you how to run the software ARM cores. This tutorial will
