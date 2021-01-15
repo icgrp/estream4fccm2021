@@ -34,12 +34,12 @@ source the settings64.sh file again as step 3.
     *  and point to **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
   * Project > Build All	
 
-[Build Image](images/build.jpg)
+![Build Image](images/build.jpg)
 
 8. Before running the 4 cores, we should connect the UART to the board. Click the green
 plus sign in **SDK Terminal** console. 
 
-![UART Selection](/images/UART.png)
+![UART Selection](images/UART.png)
 
 Select the right UART port.
 
