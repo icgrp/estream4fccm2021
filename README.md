@@ -6,7 +6,7 @@ can communicate with each other by SW streams. The FPGA fabrics and ARMs can com
 with each other by HW streams. For this demo, the data sent by core0 will go through
 core1, core2, core3 and final get back to core0, as figure below. 
 
-![Demo design Overview](./images/estream.gif)
+![Demo design Overview](./images/estream.gif)  *These images aren't coming up inline in the anonymizer; clock on the link text to see the image.*
 
 By using SW streams, core0 will final get data_send\*2\*2-2. If we use HW streams,
 the 'my_design' in the FPGA fabrics will add extra 10 to the data. By using HW 
