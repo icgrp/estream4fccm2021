@@ -29,12 +29,12 @@ be found under **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
 source the settings64.sh file again as step 3.
 6. Set the SDK workspace to **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
 7. Build the 4 SDK projects manually for the 4 ARM cores.
-   a. Create Application Project
-   b. File>Import Projects From File System
-        and point to **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
-   c. Project > Build All	
+  a. From Welcome Stream: Create Application Project (any name)
+  b. File>Import Projects From File System
+      *  and point to **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
+  c. Project > Build All	
 
-![](/images/build.jpg)
+![](images/build.jpg)
 
 8. Before running the 4 cores, we should connect the UART to the board. Click the green
 plus sign in **SDK Terminal** console. 
