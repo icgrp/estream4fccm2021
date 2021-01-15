@@ -27,17 +27,16 @@ source /opt/Xilinx/Vivado/2018.3/settings64.sh
 be found under **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
 5. Launch Xilinx SDK by type **xsdk**. If you open a new terminal, you should
 source the settings64.sh file again as step 3.
-6. Set the SDK workspace to **\<your local machine\>/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
-7. Build the 4 SDK projects mannually for the 4 ARM cores.
+6. Set the SDK workspace to **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
+7. Build the 4 SDK projects manually for the 4 ARM cores.
+   a. Create Application Project
+   b. File>Import Projects From File System
+        and point to **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
+   c. Project > Build All	
 
 ![](/images/build.jpg)
 
-8. Try to launch on hardware once to let SDK automatically create a run configuration.
-We can modify it next.
-
-![](/images/run_config.jpg)
-
-9. Before running the 4 cores, we should connect the UART to the board. Click the green
+8. Before running the 4 cores, we should connect the UART to the board. Click the green
 plus sign in **SDK Terminal** console. 
 
 ![](/images/UART.png)
@@ -45,6 +44,11 @@ plus sign in **SDK Terminal** console.
 Select the right UART port.
 
 ![](/images/PORT.jpg)
+
+9. Try to launch on hardware once to let SDK automatically create a run configuration.
+We can modify it next.
+
+![](/images/run_config.jpg)
 
 10. Click Run->Run Configurations. Make sure you check **Reset entire system**, 
 **Reset APU**, and **Program FPGA**.
