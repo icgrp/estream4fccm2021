@@ -60,6 +60,10 @@
 
 
 
+//#define TEST_MODE CIRCLE
+//#define TEST_MODE SW_THP
+#define TEST_MODE HW_THP
+
 int main()
 {
 	int Status;
@@ -69,8 +73,13 @@ int main()
     init();
 
 
-
+#if (TEST_MODE == CIRCLE)
 	kernel_pl_mix( pr_flow::RR_CACHE );
+#elif (TEST_MODE == SW_THP)
+	kernel_pl_sw( pr_flow::RR_CACHE );
+#else
+	kernel_pl_hw( pr_flow::RR_CACHE );
+#endif
 
 
 	printf("Tests Complete\n");

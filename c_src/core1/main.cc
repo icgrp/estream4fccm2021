@@ -52,16 +52,25 @@
 #include "Overlays/user_configs.h"
 #include "xtime_l.h"
 #include "sleep.h"
-
+#include "typedefs.h"
 #include "kernel1.h"
+
+//#define TEST_MODE CIRCLE
+//#define TEST_MODE SW_THP
+#define TEST_MODE HW_THP
 
 int main()
 {
 	//sleep(5);
 	init();
 
-    kernel_pl_mix( pr_flow::RR_CACHE );
-
+#if (TEST_MODE == CIRCLE)
+	kernel_pl_mix( pr_flow::RR_CACHE );
+#elif( TEST_MODE == SW_THP)
+	kernel_pl_sw( pr_flow::RR_CACHE );
+#else
+	kernel_pl_hw( pr_flow::RR_CACHE );
+#endif
 
     return 0;
 }

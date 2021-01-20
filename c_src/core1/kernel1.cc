@@ -6,17 +6,22 @@
 //ARM3: outputBF_dull
 #include "stdio.h"
 #include "Overlays/stream.h"
-#include "Overlays/mmu.h"
 #include "typedefs.h"
-#include "input_data.h"
+#include "Overlays/mmu.h"
+#include "xil_mmu.h"
+#include "xtime_l.h"
+
+
 //#define HW
 //#define AP
+#define TIMER (0xFFFEB0016) // shared memory region for creation of sw streams
 
+#include "xtime_l.h"
 
 
 
 uint8_t perf = 0;
-#define DATA_BYTE_SIZE 1024
+#define DATA_BYTE_SIZE 1024000
 
 
 
@@ -42,6 +47,90 @@ void kernel_pl_mix( pr_flow::memory_t mem )
 		STREAM_WRITE(Core1_hw_tx1, data*2);
 	}
 
+
+
+	synchronize();
+
+    //
+    shutdown_ip(perf);
+}
+
+void kernel_pl_sw( pr_flow::memory_t mem )
+{
+	XTime timer_start;
+	volatile XTime* ptr = (volatile XTime*)TIMER;
+	XTime_StartTimer();
+	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
+
+	int i=0;
+	unsigned int data;
+	pr_flow::stream Core1_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core1_sw1( pr_flow::stream_id_t::STREAM_ID_1, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	pr_flow::stream Core1_hw_rx0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::RX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core1_hw_tx1( pr_flow::stream_id_t::STREAM_ID_1, pr_flow::direction_t::TX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	synchronize();
+	Core1_hw_rx0.start_stream();
+	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+		//printf("We recieve %d\n", i);
+		data = STREAM_READ(Core1_sw0);
+	}
+
+	XTime timer_end;
+	//XTime timer_start;
+	XTime_GetTime(&timer_end);
+
+	timer_start = *ptr;
+	double bytes = DATA_BYTE_SIZE * sizeof(uint64_t); // bytes
+	double gigabytes = bytes / 1000000000;
+	double seconds = ((double)(timer_end - timer_start) / (COUNTS_PER_SECOND)); // useconds
+	double tput = (gigabytes/seconds); // b/us ->gbps
+	printf("SW stream throughput ~ %f GB/s \n",tput);
+
+	printf("\n\nAll test DONE!\n");
+
+
+	synchronize();
+
+    //
+    shutdown_ip(perf);
+}
+
+void kernel_pl_hw( pr_flow::memory_t mem )
+{
+	XTime timer_start;
+	volatile XTime* ptr = (volatile XTime*)TIMER;
+	XTime_StartTimer();
+	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
+
+	int i=0;
+	unsigned int data;
+	pr_flow::stream Core1_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core1_sw1( pr_flow::stream_id_t::STREAM_ID_1, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	pr_flow::stream Core1_hw_rx0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::RX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core1_hw_tx1( pr_flow::stream_id_t::STREAM_ID_1, pr_flow::direction_t::TX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	synchronize();
+	Core1_hw_rx0.start_stream();
+	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+		//printf("We recieve %d\n", i);
+		data = STREAM_READ(Core1_hw_rx0);
+	}
+
+	XTime timer_end;
+	//XTime timer_start;
+	XTime_GetTime(&timer_end);
+
+	timer_start = *ptr;
+	double bytes = DATA_BYTE_SIZE * sizeof(uint64_t); // bytes
+	double gigabytes = bytes / 1000000000;
+	double seconds = ((double)(timer_end - timer_start) / (COUNTS_PER_SECOND)); // useconds
+	double tput = (gigabytes/seconds); // b/us ->gbps
+	printf("HW stream throughput ~ %f GB/s \n",tput);
+
+	printf("\n\nAll test DONE!\n");
 
 
 	synchronize();

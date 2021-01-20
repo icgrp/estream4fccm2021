@@ -10,6 +10,10 @@
 #define __TYPEDEFS_H__
 
 
+#define CIRCLE 1
+#define SW_THP 2
+#define HW_THP 3
+
 
 /// macro wrappers for hw sw
 #ifdef HW

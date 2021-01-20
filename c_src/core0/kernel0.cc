@@ -6,7 +6,6 @@
 #include "typedefs.h"
 
 #include "Overlays/mmu.h"
-#include "input_data.h"
 #include "xil_mmu.h"
 #include "xtime_l.h"
 #include "stdio.h"
@@ -15,7 +14,7 @@
 
 uint8_t perf = 0;
 
-#define DATA_BYTE_SIZE 1024
+#define DATA_BYTE_SIZE 1024000
 
 unsigned int receive_data[DATA_BYTE_SIZE/4];
 
@@ -57,6 +56,73 @@ int kernel_pl_mix( pr_flow::memory_t mem )
 
 
 
+
+	return 0;
+}
+
+int kernel_pl_sw( pr_flow::memory_t mem )
+{
+
+	XTime timer_start;
+	volatile XTime* ptr = (volatile XTime*)TIMER;
+	XTime_StartTimer();
+	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
+
+	int i;
+	pr_flow::stream Core0_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_sw3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	pr_flow::stream Core0_hw_tx0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::TX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_hw_rx3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::RX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	synchronize();
+	Core0_hw_tx0.start_stream();
+
+	printf("SW streams test begins!\n");
+	XTime_GetTime(&timer_start);
+	*ptr = timer_start;
+
+	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+		STREAM_WRITE(Core0_sw0, i);
+	}
+
+
+
+	synchronize();
+
+
+
+
+	return 0;
+}
+
+int kernel_pl_hw( pr_flow::memory_t mem )
+{
+
+	XTime timer_start;
+	volatile XTime* ptr = (volatile XTime*)TIMER;
+	XTime_StartTimer();
+	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
+
+	int i;
+	pr_flow::stream Core0_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_sw3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	pr_flow::stream Core0_hw_tx0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::TX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_hw_rx3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::RX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	synchronize();
+	Core0_hw_tx0.start_stream();
+
+	printf("HW streams test begins!\n");
+	XTime_GetTime(&timer_start);
+	*ptr = timer_start;
+
+	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+		STREAM_WRITE(Core0_hw_tx0, i);
+	}
+
+	synchronize();
 
 	return 0;
 }
