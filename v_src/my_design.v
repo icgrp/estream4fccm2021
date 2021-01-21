@@ -1,8 +1,8 @@
 module my_design(
-    input [31:0] s_axis_tdata,
+    input [63:0] s_axis_tdata,
     output s_axis_tready,
     input s_axis_tvalid,
-    output [31:0] m_axis_tdata,
+    output [63:0] m_axis_tdata,
     input m_axis_tready,
     output m_axis_tvalid
     );

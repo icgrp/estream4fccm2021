@@ -62,7 +62,7 @@ We can modify it next.
 
 ![Image:Run](images/results.png)
 
-12. Sometimes you may get tcf sever errors as below. Just rerun the project. We believe it is a bug for Xilinx SDK.
+12. Sometimes you may get tcf sever errors as below. Just rerun the project. We believe it is a bug from Xilinx SDK.
 
 ![](images/TCF_ERR.png)
 
@@ -88,9 +88,9 @@ attributes to 300000000.
 
 ![Image:Set Frequency](./images/300M.png)
 
-4. Run Synthesis.
-   * Ignore error about ACP exluded from addressable master space?
-   * [BD 41-1629] </zynq_ultra_ps_e_0/SAXIACP/ACP_LPS_OCM> is excluded from all addressable master spaces.
+4. Run Synthesis. You can ignore error about OCM error as below.
+
+![](./images/OCM_ERR.png)
 
 
 5. Run Implementation.
