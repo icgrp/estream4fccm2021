@@ -62,6 +62,10 @@ We can modify it next.
 
 ![Image:Run](images/results.png)
 
+12. Sometimes you may get tcf sever errors as below. Just rerun the project. We believe it is a bug for Xilinx SDK.
+
+![](images/TCF_ERR.png)
+
 ## Tutorial 2
 The Tutorial 1 can show you how to run the software ARM cores. This tutorial will
 show you how to modify the FPGA Fabrics.
