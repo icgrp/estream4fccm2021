@@ -126,6 +126,8 @@ and uncoment **#define TEST_MODE SW_THP**. Make the same changes for core1-3.
 2. Open kernel0.cc file under **core0->src->kernel0.cc**. Increase **DATA_BYTE_SIZE** from 1024 to 1024000.
 Make the same changes for core1.
 
+![](./images/size.png)
+
 3. Change the Optimization level from **O0** to **O3**. You can right click project core0 and choose properties.
 
 ![](./images/property.jpg)
