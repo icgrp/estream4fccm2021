@@ -92,6 +92,9 @@ attributes to 300000000.
 
 ![](./images/OCM_ERR.png)
 
+Or you can inclue the OCM as below.
+
+![](./images/include.jpg)
 
 5. Run Implementation.
 
