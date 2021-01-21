@@ -26,7 +26,7 @@ enum meta_data_t
 	MASK = POW_2-1,
 };
 
-void circ_buff_write_many128( volatile ap_uint<128> *output, volatile uint8_t* reset, uint64_t* debug_register,const volatile uint8_t useable_words[NUM_FIFOS], hls::stream<uint32_t> fifo[NUM_FIFOS] )
+void circ_buff_write_many128( volatile ap_uint<128> *output, volatile uint8_t* reset, uint64_t* debug_register,const volatile uint8_t useable_words[NUM_FIFOS], hls::stream<uint64_t> fifo[NUM_FIFOS] )
 {
 
 #pragma HLS INTERFACE m_axi port=output offset=slave bundle=gmem_out
@@ -62,7 +62,7 @@ void circ_buff_write_many128( volatile ap_uint<128> *output, volatile uint8_t* r
 	int16_t bytes_to_write=0;
 	uint16_t cycles=0;
 
-	uint32_t low=0;
+	uint64_t low=0;
 	uint32_t hi=0;
 	uint32_t mid_lo=0;
 	uint32_t mid_hi=0;

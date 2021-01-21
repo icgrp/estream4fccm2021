@@ -26,7 +26,12 @@ enum meta_data_t
 };
 
 
-void circ_buff_read_many128( volatile ap_uint<128> *input, volatile uint8_t* reset, uint64_t* debug_register,const volatile uint8_t useable_words[NUM_FIFOS], hls::stream<uint32_t> fifo[NUM_FIFOS] )
+void circ_buff_read_many128(
+							volatile ap_uint<128> *input,
+							volatile uint8_t* reset,
+							uint64_t* debug_register,
+							const volatile uint8_t useable_words[NUM_FIFOS],
+							hls::stream<uint64_t> fifo[NUM_FIFOS] )
 {
 
 #pragma HLS INTERFACE m_axi port=input offset=slave bundle=gmem_read
@@ -140,7 +145,7 @@ void circ_buff_read_many128( volatile ap_uint<128> *input, volatile uint8_t* res
 					decompose:for(ap_uint<4> word = 0; word < words; word++)
 					{
 #pragma HLS pipeline II=1
-						part = ( temp >> shift_table[word] ) & 0xFFFFFFFF;
+						part = ( temp >> shift_table[word] ) & 0xFFFFFFFFFFFFFFFF;
 						fifo[stride].write(part);
 					}
 				}

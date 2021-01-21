@@ -22,16 +22,19 @@
 	#define STREAM_READ( stream )(\
 	{							 \
 	pr_flow::wide_t temp; 		 \
+	uint64_t out;				\
 	stream.read(&temp); 		 \
-	temp.lower_32;					 \
+	out = ((((uint64_t)temp.mid_lo_32)<<32) | ((uint64_t)temp.lower_32));\
+	out;					 \
 	})
 	#define STREAM_WRITE( stream,value )(\
 	{							 \
 	pr_flow::wide_t temp; 		 \
-	temp.lower_32 = value;			 \
-	temp.upper_32 = 0;			     \
+	temp.lower_32 = value & 0xffffffff; \
+	temp.mid_lo_32 = ((uint64_t)value >>32) & 0xffffffff;		\
 	stream.write(temp); 	 	 \
 	})
 #endif
+
 
 #endif

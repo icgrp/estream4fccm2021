@@ -85,6 +85,8 @@ attributes to 300000000.
 
 4. Run Synthesis.
    * Ignore error about ACP exluded from addressable master space?
+   * [BD 41-1629] </zynq_ultra_ps_e_0/SAXIACP/ACP_LPS_OCM> is excluded from all addressable master spaces.
+
 
 5. Run Implementation.
 

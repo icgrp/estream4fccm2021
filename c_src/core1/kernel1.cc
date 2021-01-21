@@ -63,7 +63,7 @@ void kernel_pl_sw( pr_flow::memory_t mem )
 	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
 
 	int i=0;
-	unsigned int data;
+	uint64_t data;
 	pr_flow::stream Core1_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 	pr_flow::stream Core1_sw1( pr_flow::stream_id_t::STREAM_ID_1, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 
@@ -73,8 +73,9 @@ void kernel_pl_sw( pr_flow::memory_t mem )
 	synchronize();
 	Core1_hw_rx0.start_stream();
 	for(i=0; i<DATA_BYTE_SIZE/4; i++){
-		//printf("We recieve %d\n", i);
+		//printf("We recieve");
 		data = STREAM_READ(Core1_sw0);
+		//printf("%08x_%08x\n", data>>32, data);
 	}
 
 	XTime timer_end;
@@ -105,7 +106,7 @@ void kernel_pl_hw( pr_flow::memory_t mem )
 	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
 
 	int i=0;
-	unsigned int data;
+	uint64_t data;
 	pr_flow::stream Core1_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 	pr_flow::stream Core1_sw1( pr_flow::stream_id_t::STREAM_ID_1, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 
@@ -115,8 +116,9 @@ void kernel_pl_hw( pr_flow::memory_t mem )
 	synchronize();
 	Core1_hw_rx0.start_stream();
 	for(i=0; i<DATA_BYTE_SIZE/4; i++){
-		//printf("We recieve %d\n", i);
+		//printf("We recieve");
 		data = STREAM_READ(Core1_hw_rx0);
+		//printf("%08x_%08x\n", data>>32, data);
 	}
 
 	XTime timer_end;

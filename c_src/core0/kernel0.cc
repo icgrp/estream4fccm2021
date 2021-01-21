@@ -16,7 +16,7 @@ uint8_t perf = 0;
 
 #define DATA_BYTE_SIZE 1024000
 
-unsigned int receive_data[DATA_BYTE_SIZE/4];
+uint64_t receive_data[DATA_BYTE_SIZE/4];
 
 int kernel_pl_mix( pr_flow::memory_t mem )
 {
@@ -68,7 +68,7 @@ int kernel_pl_sw( pr_flow::memory_t mem )
 	XTime_StartTimer();
 	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
 
-	int i;
+	uint64_t i;
 	pr_flow::stream Core0_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 	pr_flow::stream Core0_sw3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 
@@ -83,7 +83,9 @@ int kernel_pl_sw( pr_flow::memory_t mem )
 	*ptr = timer_start;
 
 	for(i=0; i<DATA_BYTE_SIZE/4; i++){
-		STREAM_WRITE(Core0_sw0, i);
+		uint64_t tmp;
+		tmp = (((uint64_t)i)<<32) | (uint64_t)i;
+		STREAM_WRITE(Core0_sw0, tmp);
 	}
 
 
@@ -119,7 +121,10 @@ int kernel_pl_hw( pr_flow::memory_t mem )
 	*ptr = timer_start;
 
 	for(i=0; i<DATA_BYTE_SIZE/4; i++){
-		STREAM_WRITE(Core0_hw_tx0, i);
+		uint64_t tmp;
+		tmp = (((uint64_t)i)<<32) | (uint64_t)i;
+
+		STREAM_WRITE(Core0_hw_tx0, tmp);
 	}
 
 	synchronize();
