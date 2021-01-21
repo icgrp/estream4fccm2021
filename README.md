@@ -150,7 +150,7 @@ and uncoment **#define TEST_MODE HW_THP**. Make the same changes for core1-3.
 6. Rebuild core0-3 project. Click **Run->Run Configurations->Run** again to lauch on hardware as Tutorial Step 9-11.
 You should see the HW throughput between 
 
-![](./images/sw_thp.png)
+![](./images/hw_thp.png)
 
 
 
