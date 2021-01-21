@@ -131,7 +131,7 @@ Make the same changes for core1.
 ![](./images/property.jpg)
 
 Click **C/C++ Build->Settings->ARM v8 g++ compiler->Optimization** as below.
-Make the same change for core1-3.
+Make the same changes for core1-3.
 
 ![](./images/O3.jpg)
 
