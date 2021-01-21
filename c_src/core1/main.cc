@@ -55,9 +55,9 @@
 #include "typedefs.h"
 #include "kernel1.h"
 
-//#define TEST_MODE CIRCLE
+#define TEST_MODE CIRCLE
 //#define TEST_MODE SW_THP
-#define TEST_MODE HW_THP
+//#define TEST_MODE HW_THP
 
 int main()
 {

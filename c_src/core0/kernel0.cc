@@ -14,9 +14,9 @@
 
 uint8_t perf = 0;
 
-#define DATA_BYTE_SIZE 1024000
+#define DATA_BYTE_SIZE 1024
 
-uint64_t receive_data[DATA_BYTE_SIZE/4];
+uint64_t receive_data[DATA_BYTE_SIZE/8];
 
 int kernel_pl_mix( pr_flow::memory_t mem )
 {
@@ -30,23 +30,24 @@ int kernel_pl_mix( pr_flow::memory_t mem )
 	synchronize();
 	Core0_hw_tx0.start_stream();
 
+
 	printf("SW streams test begins!\n");
-	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
 		STREAM_WRITE(Core0_sw0, i);
 		receive_data[i] = STREAM_READ(Core0_sw3);
 	}
 
-	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
 		printf("SW: %d (core0->core1) * 2 (core1->core2) * 2 (core2->core3) -2 (core3->core0) = %d\n", i, receive_data[i]);
 	}
 
 	printf("\n\n\nHW streams test begins!\n");
-	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
 		STREAM_WRITE(Core0_hw_tx0, i);
 		receive_data[i] = STREAM_READ(Core0_hw_rx3);
 	}
 
-	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
 		printf("HW: %d (core0->core1) * 2 (core1->core2) * 2 (core2->core3) -2 (core3->Fabrics) +10 (Fabrics->core0) = %d\n", i, receive_data[i]);
 	}
 
@@ -82,7 +83,7 @@ int kernel_pl_sw( pr_flow::memory_t mem )
 	XTime_GetTime(&timer_start);
 	*ptr = timer_start;
 
-	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
 		uint64_t tmp;
 		tmp = (((uint64_t)i)<<32) | (uint64_t)i;
 		STREAM_WRITE(Core0_sw0, tmp);
@@ -120,7 +121,7 @@ int kernel_pl_hw( pr_flow::memory_t mem )
 	XTime_GetTime(&timer_start);
 	*ptr = timer_start;
 
-	for(i=0; i<DATA_BYTE_SIZE/4; i++){
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
 		uint64_t tmp;
 		tmp = (((uint64_t)i)<<32) | (uint64_t)i;
 

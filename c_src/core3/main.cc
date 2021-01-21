@@ -52,17 +52,23 @@
 #include "Overlays/mmu.h"
 #include "xtime_l.h"
 #include "sleep.h"
-
+#include "typedefs.h"
 #include "kernel3.h"
 #include "Overlays/user_configs.h"
-#define TESTS 10
+
+#define TEST_MODE CIRCLE
+//#define TEST_MODE SW_THP
+//#define TEST_MODE HW_THP
 
 int main()
 {
 	//sleep(5);
 	init();
-
+#if (TEST_MODE == CIRCLE)
     kernel_pl_mix( pr_flow::RR_CACHE );
+#else
+    kernel_pl_sw_hw( pr_flow::RR_CACHE );
+#endif
 
     return 0;
 }
