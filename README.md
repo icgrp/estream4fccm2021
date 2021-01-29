@@ -29,13 +29,11 @@ be found under **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
 5. Launch Xilinx SDK by type **xsdk**. If you open a new terminal, you should
 source the settings64.sh file again as step 3.
 6. Set the SDK workspace to **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
-7. Build the 4 SDK projects manually for the 4 ARM cores.
-  * From Welcome Stream: Create Application Project (any name)
-  * File>Import Projects From File System
-    *  and point to **estream4fccm2021/workspace/vivado_prj/u96_demo/u96_demo.sdk**.
-  * Project > Build All	
+7. Close the welcome windows and the 4 projects for 4 cores will show up in **Project Explorer** window.
 
 ![Image:Build Image](images/build.jpg)
+
+7. Click menu **Project->Build all** to build all the 4 project.
 
 8. Before running the 4 cores, we should connect the UART to the board. Click the green
 plus sign in **SDK Terminal** console. 
@@ -163,16 +161,16 @@ You should see the HW throughput between
 
 7. The data transimission size may affect the throughput. The table bellow shows how the throughput changes with various transfer sizes.
 
-| #Transfer Size | #SW stream | #HW Stream |
+|  Transfer Size |  SW stream |  HW Stream |
 |:--------------:|:----------:|:----------:|
-|512\*64bits     |0.73 GB/s   |0.38 GB/s   |
-|1024\*64bits    |0.88 GB/s   |0.52 GB/s   |
-|1536\*64bits    |0.93 GB/s   |0.57 GB/s   |
-|2048\*64bits    |0.97 GB/s   |0.59 GB/s   |
-|5120\*64bits    |1.08 GB/s   |0.75 GB/s   |
-|10240\*64bits   |1.24 GB/s   |1.01 GB/s   |
-|102400\*64bits  |1.49 GB/s   |1.54 GB/s   |
-|1024000\*64bits |1.44 GB/s   |1.63 GB/s   |
+|  512\*64bits   | 0.73 GB/s  |0.38 GB/s   |
+|  1024\*64bits  | 0.88 GB/s  |0.52 GB/s   |
+|  1536\*64bits  | 0.93 GB/s  |0.57 GB/s   |
+|  2048\*64bits  | 0.97 GB/s  |0.59 GB/s   |
+|  5120\*64bits  | 1.08 GB/s  |0.75 GB/s   |
+|  10240\*64bits | 1.24 GB/s  |1.01 GB/s   |
+| 102400\*64bits | 1.49 GB/s  |1.54 GB/s   |
+|1024000\*64bits | 1.44 GB/s  |1.63 GB/s   |
 
 
 
