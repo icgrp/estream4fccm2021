@@ -161,7 +161,17 @@ You should see the HW throughput between
 ![](./images/hw_thp.png)
 
 
-
+7. The data transimission size may affect the throughput. The table bellow shows how the throughput changes with various transfer sizes.
+| #Transfer Size | #SW stream | #HW Stream |
+|:--------------:|:----------:|:----------:|
+|512\*64bits     |0.73 GB/s   |0.38 GB/s   |
+|1024\*64bits    |0.88 GB/s   |0.52 GB/s   |
+|1536\*64bits    |0.93 GB/s   |0.57 GB/s   |
+|2048\*64bits    |0.97 GB/s   |0.59 GB/s   |
+|5120\*64bits    |1.08 GB/s   |0.75 GB/s   |
+|10240\*64bits   |1.24 GB/s   |1.01 GB/s   |
+|102400\*64bits  |1.49 GB/s   |1.54 GB/s   |
+|1024000\*64bits |1.44 GB/s   |1.63 GB/s   |
 
 
 
