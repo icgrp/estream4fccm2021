@@ -162,6 +162,7 @@ You should see the HW throughput between
 
 
 7. The data transimission size may affect the throughput. The table bellow shows how the throughput changes with various transfer sizes.
+
 | #Transfer Size | #SW stream | #HW Stream |
 |:--------------:|:----------:|:----------:|
 |512\*64bits     |0.73 GB/s   |0.38 GB/s   |
