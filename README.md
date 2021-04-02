@@ -163,14 +163,15 @@ You should see the HW throughput between
 
 |  Transfer Size |  SW stream |  HW Stream |
 |:--------------:|:----------:|:----------:|
-|  512\*64bits   | 0.73 GB/s  |0.38 GB/s   |
-|  1024\*64bits  | 0.88 GB/s  |0.52 GB/s   |
-|  1536\*64bits  | 0.93 GB/s  |0.57 GB/s   |
-|  2048\*64bits  | 0.97 GB/s  |0.59 GB/s   |
-|  5120\*64bits  | 1.08 GB/s  |0.75 GB/s   |
-|  10240\*64bits | 1.24 GB/s  |1.01 GB/s   |
-| 102400\*64bits | 1.49 GB/s  |1.54 GB/s   |
-|1024000\*64bits | 1.44 GB/s  |1.63 GB/s   |
+|  512\*64bits   |  80.5 MB/s |14.83 MB/s  |
+|  1024\*64bits  | 110.0 MB/s |18.06 MB/s  |
+|  1536\*64bits  | 116.4 MB/s |20.01 MB/s  |
+|  2048\*64bits  | 121.2 MB/s |20.71 MB/s  |
+|  5120\*64bits  | 135.0 MB/s |24.48 MB/s  |
+|  10240\*64bits | 155.0 MB/s |34.34 MB/s  |
+| 102400\*64bits | 186.3 MB/s |45.31 MB/s  |
+| 204800\*64bits | 186.3 MB/s |55.67 MB/s  |
+| 409600\*64bits | 186.3 MB/s |54.71 MB/s  |
 
 
 
