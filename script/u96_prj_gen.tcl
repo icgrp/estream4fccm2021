@@ -1039,6 +1039,9 @@ proc cr_bd_design_1 { parentCell } {
   connect_bd_intf_net -intf_net ps8_0_axi_periph_M05_AXI [get_bd_intf_pins circ_buff_write_many/s_axi_control] [get_bd_intf_pins ps8_0_axi_periph/M05_AXI]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD [get_bd_intf_pins ps8_0_axi_periph/S00_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_FPD]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_0_M_AXI_HPM1_FPD [get_bd_intf_pins ps8_0_axi_periph/S01_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM1_FPD]
+  set_property -dict [list CONFIG.FREQ_HZ {300000000}] [get_bd_intf_pins my_design_0/s_axis]
+  set_property -dict [list CONFIG.FREQ_HZ {300000000}] [get_bd_intf_pins my_design_0/m_axis]
+
 
   # Create port connections
   connect_bd_net -net rst_ps8_0_300M_peripheral_aresetn [get_bd_pins axi_smc/aresetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins axis_data_fifo_1/s_axis_aresetn] [get_bd_pins axis_data_fifo_2/s_axis_aresetn] [get_bd_pins axis_data_fifo_3/s_axis_aresetn] [get_bd_pins axis_data_fifo_4/s_axis_aresetn] [get_bd_pins circ_buff_read_many1/ap_rst_n] [get_bd_pins circ_buff_write_many/ap_rst_n] [get_bd_pins mutex_0/S0_AXI_ARESETN] [get_bd_pins mutex_0/S1_AXI_ARESETN] [get_bd_pins mutex_0/S2_AXI_ARESETN] [get_bd_pins mutex_0/S3_AXI_ARESETN] [get_bd_pins ps8_0_axi_periph/ARESETN] [get_bd_pins ps8_0_axi_periph/M00_ARESETN] [get_bd_pins ps8_0_axi_periph/M01_ARESETN] [get_bd_pins ps8_0_axi_periph/M02_ARESETN] [get_bd_pins ps8_0_axi_periph/M03_ARESETN] [get_bd_pins ps8_0_axi_periph/M04_ARESETN] [get_bd_pins ps8_0_axi_periph/M05_ARESETN] [get_bd_pins ps8_0_axi_periph/S00_ARESETN] [get_bd_pins ps8_0_axi_periph/S01_ARESETN] [get_bd_pins rst_ps8_0_300M/peripheral_aresetn]
