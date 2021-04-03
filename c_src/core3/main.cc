@@ -56,8 +56,8 @@
 #include "kernel3.h"
 #include "Overlays/user_configs.h"
 
-//#define TEST_MODE CIRCLE
-#define TEST_MODE SW_THP
+#define TEST_MODE CIRCLE
+//#define TEST_MODE SW_THP
 //#define TEST_MODE HW_THP
 
 int main()
