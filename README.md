@@ -129,7 +129,7 @@ and uncoment **#define TEST_MODE SW_THP**. Make the same changes for core1-3.
 
 ![](./images/comment_sw.png)
 
-2. Open kernel0.cc file under **core0->src->kernel0.cc**. Increase **DATA_BYTE_SIZE** from 1024 to 1024000.
+2. Open kernel0.cc file under **core0->src->kernel0.cc**. Increase **DATA_BYTE_SIZE** from 1024 to 409600.
 Make the same changes for core1.
 
 ![](./images/size.png)
@@ -169,9 +169,9 @@ You should see the HW throughput between
 |  2048\*64bits  | 121.2 MB/s |20.71 MB/s  |
 |  5120\*64bits  | 135.0 MB/s |24.48 MB/s  |
 |  10240\*64bits | 155.0 MB/s |34.34 MB/s  |
-| 102400\*64bits | 186.3 MB/s |45.31 MB/s  |
-| 204800\*64bits | 186.3 MB/s |55.67 MB/s  |
-| 409600\*64bits | 186.3 MB/s |54.71 MB/s  |
+| 102400\*64bits | 180.7 MB/s |45.31 MB/s  |
+| 204800\*64bits | 180.7 MB/s |55.67 MB/s  |
+| 409600\*64bits | 180.7 MB/s |54.71 MB/s  |
 
 
 
