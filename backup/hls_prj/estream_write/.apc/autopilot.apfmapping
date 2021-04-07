@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="circ_buff_write_128.cpp" path="/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/hls_prj/estream_write/c_src/circ_buff_write_128.cpp"/>
+    <originFiles name="circ_buff_write_many_128.cpp" path="/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/hls_prj/estream_write/c_src/circ_buff_write_many_128.cpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

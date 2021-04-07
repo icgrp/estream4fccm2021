@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"circ_buff_read_many128": {
+			"proto_instances": {
+			}
+		}
+	}
+}

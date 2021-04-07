@@ -1,0 +1,190 @@
+// ARM0: Data_In, Data_redir, projection_odd, projection_even,
+// ARM1: rast1_even, rast1_odd, rast2_even, rast2_odd
+// ARM2: zculling_top, zculling_bot, colorFB_top, colorFB_bot
+// ARM3: outputBF_dull
+#include "Overlays/stream.h"
+#include "typedefs.h"
+
+#include "Overlays/mmu.h"
+#include "xil_mmu.h"
+#include "xtime_l.h"
+#include "stdio.h"
+#define TIMER (0xFFFEB0016) // shared memory region for creation of sw streams
+//#define AP
+
+uint8_t perf = 0;
+
+#define DATA_BYTE_SIZE 1024
+
+uint64_t receive_data[DATA_BYTE_SIZE/8];
+
+int kernel_pl_mix( pr_flow::memory_t mem )
+{
+	int i;
+	pr_flow::stream Core0_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_sw3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	pr_flow::stream Core0_hw_tx0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::TX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_hw_rx3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::RX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	synchronize();
+	Core0_hw_tx0.start_stream();
+
+
+	printf("SW streams test begins!\n");
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
+		STREAM_WRITE(Core0_sw0, i);
+		receive_data[i] = STREAM_READ(Core0_sw3);
+	}
+
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
+		printf("SW: %d (core0->core1) * 2 (core1->core2) * 2 (core2->core3) -2 (core3->core0) = %d\n", i, receive_data[i]);
+	}
+
+	printf("\n\n\nHW streams test begins!\n");
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
+		STREAM_WRITE(Core0_hw_tx0, i);
+		receive_data[i] = STREAM_READ(Core0_hw_rx3);
+	}
+
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
+		printf("HW: %d (core0->core1) * 2 (core1->core2) * 2 (core2->core3) -2 (core3->Fabrics) +10 (Fabrics->core0) = %d\n", i, receive_data[i]);
+	}
+
+	printf("\n\nAll test DONE!\n");
+
+	synchronize();
+
+
+
+
+	return 0;
+}
+
+int kernel_pl_sw( pr_flow::memory_t mem )
+{
+
+	XTime timer_start;
+	volatile XTime* ptr = (volatile XTime*)TIMER;
+	XTime_StartTimer();
+	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
+
+	uint64_t i;
+	pr_flow::stream Core0_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_sw3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	pr_flow::stream Core0_hw_tx0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::TX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_hw_rx3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::RX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	synchronize();
+	Core0_hw_tx0.start_stream();
+
+	printf("SW streams test begins!\n");
+	XTime_GetTime(&timer_start);
+	*ptr = timer_start;
+
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
+		uint64_t tmp;
+		tmp = (((uint64_t)i)<<32) | (uint64_t)i;
+		STREAM_WRITE(Core0_sw0, tmp);
+	}
+
+
+
+	synchronize();
+
+
+
+
+	return 0;
+}
+
+int kernel_pl_hw( pr_flow::memory_t mem )
+{
+
+	XTime timer_start;
+	volatile XTime* ptr = (volatile XTime*)TIMER;
+	XTime_StartTimer();
+	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
+
+	int i;
+	pr_flow::stream Core0_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_sw3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	pr_flow::stream Core0_hw_tx0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::TX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+	pr_flow::stream Core0_hw_rx3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::RX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+	synchronize();
+	Core0_hw_tx0.start_stream();
+
+	printf("HW streams test begins!\n");
+	XTime_GetTime(&timer_start);
+	*ptr = timer_start;
+
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
+		uint64_t tmp;
+		tmp = (((uint64_t)i)<<32) | (uint64_t)i;
+
+		STREAM_WRITE(Core0_hw_tx0, tmp);
+	}
+
+	synchronize();
+
+	return 0;
+}
+
+// only a 2core example
+int kernel_4_ip_hw( pr_flow::memory_t mem )
+{
+	int i = 0;
+
+	volatile XTime* ptr = (volatile XTime*)TIMER;
+	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
+
+	XTime timer_end;
+	XTime timer_start;
+
+	XTime_StartTimer();
+
+	//
+	uint16_t width = 0;
+
+	//
+	// Create rx stream
+	pr_flow::stream Core0_hw_tx0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::TX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
+
+
+//	Stream1.stream_init( test,memory );
+//	width = Stream1.get_width(test);
+
+
+	synchronize();
+	printf("HW streams test begins!\n");
+	Core0_hw_tx0.start_stream();
+
+	uint64_t expected = 0;
+	uint64_t data = 0;
+	pr_flow::wide_t data1;
+
+	XTime_GetTime(&timer_start);
+
+
+	//
+	// Send data
+	for(i=0; i<DATA_BYTE_SIZE/8; i++){
+		uint64_t tmp;
+		tmp = (((uint64_t)i)<<32) | (uint64_t)i;
+
+		STREAM_WRITE(Core0_hw_tx0, tmp);
+	}
+
+	synchronize();
+
+	Stream1.stop_ip();
+	//
+	//
+	// destroy streams
+	Stream1.~stream();
+
+	return XST_SUCCESS;
+}

@@ -1,0 +1,27 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="circ_buff_write_many128"/>
+    </name>
+    <project>
+        <value string="estream_write"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xczu9eg:-ffvb1156:-2-e"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/zynquplus/zynquplus" name="DefaultPlatform"/>
+        <library value="xilinx/zynquplus/zynquplus_fpv7" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock name="default" period="4" default="false"/>
+    </clockList>
+    <config>
+        <config_compile blackbox=""/>
+        <schedule model="circ_buff_write_many128"/>
+        <config_export format="ip_catalog" rtl="verilog"/>
+    </config>
+    <ExportDesign askAgain="true" evaluate="false" rtl="verilog" formatName="ip_catalog">
+        <Format formatName="ip_catalog" description="" vendor="" library="" ipname="" version="" driver_input_dir="" display_name="" taxonomy=""/>
+    </ExportDesign>
+</AutoPilot:solution>
+

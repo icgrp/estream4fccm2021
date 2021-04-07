@@ -1,0 +1,1444 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Apr  2 17:24:44 2021
+# Process ID: 18967
+# Current directory: /home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.runs/design_1_mutex_0_0_synth_1
+# Command line: vivado -log design_1_mutex_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_mutex_0_0.tcl
+# Log file: /home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.runs/design_1_mutex_0_0_synth_1/design_1_mutex_0_0.vds
+# Journal file: /home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.runs/design_1_mutex_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_mutex_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/hls_prj'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.3/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1386.043 ; gain = 0.000 ; free physical = 8707 ; free virtual = 17308
+Command: synth_design -top design_1_mutex_0_0 -part xczu3eg-sbva484-1-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 19326 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1456.043 ; gain = 69.879 ; free physical = 8733 ; free virtual = 17305
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_mutex_0_0' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ip/design_1_mutex_0_0/synth/design_1_mutex_0_0.vhd:140]
+	Parameter C_FAMILY bound to: zynquplus - type: string 
+	Parameter C_NUM_AXI bound to: 4 - type: integer 
+	Parameter C_S0_AXI_BASEADDR bound to: 32'b10100000000000000000000000000000 
+	Parameter C_S0_AXI_HIGHADDR bound to: 32'b10100000000000000000111111111111 
+	Parameter C_S0_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S0_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S1_AXI_BASEADDR bound to: 32'b10100000000000000001000000000000 
+	Parameter C_S1_AXI_HIGHADDR bound to: 32'b10100000000000000001111111111111 
+	Parameter C_S1_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S1_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S2_AXI_BASEADDR bound to: 32'b10100000000000000010000000000000 
+	Parameter C_S2_AXI_HIGHADDR bound to: 32'b10100000000000000010111111111111 
+	Parameter C_S2_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S2_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S3_AXI_BASEADDR bound to: 32'b10100000000000000011000000000000 
+	Parameter C_S3_AXI_HIGHADDR bound to: 32'b10100000000000000011111111111111 
+	Parameter C_S3_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S3_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S4_AXI_BASEADDR bound to: 32'b11111111111111111111111111111111 
+	Parameter C_S4_AXI_HIGHADDR bound to: 32'b00000000000000000000000000000000 
+	Parameter C_S4_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S4_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S5_AXI_BASEADDR bound to: 32'b11111111111111111111111111111111 
+	Parameter C_S5_AXI_HIGHADDR bound to: 32'b00000000000000000000000000000000 
+	Parameter C_S5_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S5_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S6_AXI_BASEADDR bound to: 32'b11111111111111111111111111111111 
+	Parameter C_S6_AXI_HIGHADDR bound to: 32'b00000000000000000000000000000000 
+	Parameter C_S6_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S6_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S7_AXI_BASEADDR bound to: 32'b11111111111111111111111111111111 
+	Parameter C_S7_AXI_HIGHADDR bound to: 32'b00000000000000000000000000000000 
+	Parameter C_S7_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S7_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_ENABLE_USER bound to: 0 - type: integer 
+	Parameter C_OWNER_ID_WIDTH bound to: 8 - type: integer 
+	Parameter C_ENABLE_HW_PROT bound to: 0 - type: integer 
+	Parameter C_NUM_MUTEX bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'mutex' declared at '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1780' bound to instance 'U0' of component 'mutex' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ip/design_1_mutex_0_0/synth/design_1_mutex_0_0.vhd:444]
+INFO: [Synth 8-638] synthesizing module 'mutex' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:2019]
+	Parameter C_FAMILY bound to: zynquplus - type: string 
+	Parameter C_S0_AXI_BASEADDR bound to: -1610612736 - type: integer 
+	Parameter C_S0_AXI_HIGHADDR bound to: -1610608641 - type: integer 
+	Parameter C_S0_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S0_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S1_AXI_BASEADDR bound to: -1610608640 - type: integer 
+	Parameter C_S1_AXI_HIGHADDR bound to: -1610604545 - type: integer 
+	Parameter C_S1_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S1_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S2_AXI_BASEADDR bound to: -1610604544 - type: integer 
+	Parameter C_S2_AXI_HIGHADDR bound to: -1610600449 - type: integer 
+	Parameter C_S2_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S2_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S3_AXI_BASEADDR bound to: -1610600448 - type: integer 
+	Parameter C_S3_AXI_HIGHADDR bound to: -1610596353 - type: integer 
+	Parameter C_S3_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S3_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S4_AXI_BASEADDR bound to: -1 - type: integer 
+	Parameter C_S4_AXI_HIGHADDR bound to: 0 - type: integer 
+	Parameter C_S4_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S4_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S5_AXI_BASEADDR bound to: -1 - type: integer 
+	Parameter C_S5_AXI_HIGHADDR bound to: 0 - type: integer 
+	Parameter C_S5_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S5_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S6_AXI_BASEADDR bound to: -1 - type: integer 
+	Parameter C_S6_AXI_HIGHADDR bound to: 0 - type: integer 
+	Parameter C_S6_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S6_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S7_AXI_BASEADDR bound to: -1 - type: integer 
+	Parameter C_S7_AXI_HIGHADDR bound to: 0 - type: integer 
+	Parameter C_S7_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S7_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_NUM_AXI bound to: 4 - type: integer 
+	Parameter C_ENABLE_USER bound to: 0 - type: integer 
+	Parameter C_OWNER_ID_WIDTH bound to: 8 - type: integer 
+	Parameter C_ENABLE_HW_PROT bound to: 0 - type: integer 
+	Parameter C_NUM_MUTEX bound to: 16 - type: integer 
+	Parameter C_S_AXI_BASEADDR bound to: -1610612736 - type: integer 
+	Parameter C_S_AXI_HIGHADDR bound to: -1610608641 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'axi_decode' declared at '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1344' bound to instance 'AXI_If_0' of component 'axi_decode' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:2209]
+INFO: [Synth 8-638] synthesizing module 'axi_decode' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1401]
+	Parameter C_S_AXI_BASEADDR bound to: -1610612736 - type: integer 
+	Parameter C_S_AXI_HIGHADDR bound to: -1610608641 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+INFO: [Synth 8-256] done synthesizing module 'axi_decode' (1#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1401]
+	Parameter C_S_AXI_BASEADDR bound to: -1610608640 - type: integer 
+	Parameter C_S_AXI_HIGHADDR bound to: -1610604545 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'axi_decode' declared at '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1344' bound to instance 'AXI_If_1' of component 'axi_decode' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:2276]
+INFO: [Synth 8-638] synthesizing module 'axi_decode__parameterized1' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1401]
+	Parameter C_S_AXI_BASEADDR bound to: -1610608640 - type: integer 
+	Parameter C_S_AXI_HIGHADDR bound to: -1610604545 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+INFO: [Synth 8-256] done synthesizing module 'axi_decode__parameterized1' (1#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1401]
+	Parameter C_S_AXI_BASEADDR bound to: -1610604544 - type: integer 
+	Parameter C_S_AXI_HIGHADDR bound to: -1610600449 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'axi_decode' declared at '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1344' bound to instance 'AXI_If_2' of component 'axi_decode' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:2343]
+INFO: [Synth 8-638] synthesizing module 'axi_decode__parameterized3' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1401]
+	Parameter C_S_AXI_BASEADDR bound to: -1610604544 - type: integer 
+	Parameter C_S_AXI_HIGHADDR bound to: -1610600449 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+INFO: [Synth 8-256] done synthesizing module 'axi_decode__parameterized3' (1#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1401]
+	Parameter C_S_AXI_BASEADDR bound to: -1610600448 - type: integer 
+	Parameter C_S_AXI_HIGHADDR bound to: -1610596353 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'axi_decode' declared at '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1344' bound to instance 'AXI_If_3' of component 'axi_decode' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:2410]
+INFO: [Synth 8-638] synthesizing module 'axi_decode__parameterized5' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1401]
+	Parameter C_S_AXI_BASEADDR bound to: -1610600448 - type: integer 
+	Parameter C_S_AXI_HIGHADDR bound to: -1610596353 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_ASYNC_CLKS bound to: 0 - type: integer 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'S_AXI_RDATA_FDRE' to cell 'FDRE' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1552]
+INFO: [Common 17-14] Message 'Synth 8-113' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'axi_decode__parameterized5' (1#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1401]
+	Parameter C_FAMILY bound to: zynquplus - type: string 
+	Parameter C_NUM_INTERFACE bound to: 4 - type: integer 
+	Parameter C_ENABLE_USER bound to: 0 - type: integer 
+	Parameter C_OWNER_ID_WIDTH bound to: 8 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_ENABLE_HW_PROT bound to: 0 - type: integer 
+	Parameter C_NUM_MUTEX bound to: 16 - type: integer 
+	Parameter C_MUTEX_NUMBER bound to: 0 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_REGISTER_WIDTH bound to: 8 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+	Parameter C_DWIDTH_USER_REG bound to: 32 - type: integer 
+	Parameter C_DWIDTH_MUTEX bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'mutex_core' declared at '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:870' bound to instance 'SingleAccess' of component 'mutex_core' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:2746]
+INFO: [Synth 8-638] synthesizing module 'mutex_core' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:911]
+	Parameter C_FAMILY bound to: zynquplus - type: string 
+	Parameter C_NUM_INTERFACE bound to: 4 - type: integer 
+	Parameter C_ENABLE_USER bound to: 0 - type: integer 
+	Parameter C_OWNER_ID_WIDTH bound to: 8 - type: integer 
+	Parameter C_HW_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_ENABLE_HW_PROT bound to: 0 - type: integer 
+	Parameter C_NUM_MUTEX bound to: 16 - type: integer 
+	Parameter C_MUTEX_NUMBER bound to: 0 - type: integer 
+	Parameter C_AWIDTH bound to: 12 - type: integer 
+	Parameter C_REGISTER_WIDTH bound to: 8 - type: integer 
+	Parameter C_DWIDTH bound to: 32 - type: integer 
+	Parameter C_DWIDTH_USER_REG bound to: 32 - type: integer 
+	Parameter C_DWIDTH_MUTEX bound to: 1 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 16 - type: integer 
+	Parameter C_OWNER_ID_WIDTH bound to: 8 - type: integer 
+	Parameter C_AWIDTH bound to: 4 - type: integer 
+	Parameter C_DWIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'multi_channel_mutex' declared at '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:657' bound to instance 'Normal_Mutex_Inst' of component 'multi_channel_mutex' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1158]
+INFO: [Synth 8-638] synthesizing module 'multi_channel_mutex' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:680]
+	Parameter C_NUM_CHANNELS bound to: 16 - type: integer 
+	Parameter C_OWNER_ID_WIDTH bound to: 8 - type: integer 
+	Parameter C_AWIDTH bound to: 4 - type: integer 
+	Parameter C_DWIDTH bound to: 1 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 16 - type: integer 
+	Parameter C_AWIDTH bound to: 4 - type: integer 
+	Parameter C_DWIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-3491] module 'multi_channel_register' declared at '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:465' bound to instance 'Mutex_Store' of component 'multi_channel_register' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:718]
+INFO: [Synth 8-638] synthesizing module 'multi_channel_register' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:486]
+	Parameter C_NUM_CHANNELS bound to: 16 - type: integer 
+	Parameter C_AWIDTH bound to: 4 - type: integer 
+	Parameter C_DWIDTH bound to: 9 - type: integer 
+	Parameter C_DWIDTH bound to: 9 - type: integer 
+	Parameter C_AWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'Gen_DRAM' declared at '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:335' bound to instance 'RAM_Storage' of component 'Gen_DRAM' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:535]
+INFO: [Synth 8-638] synthesizing module 'Gen_DRAM' [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:350]
+	Parameter C_DWIDTH bound to: 9 - type: integer 
+	Parameter C_AWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Gen_DRAM' (2#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:350]
+INFO: [Synth 8-256] done synthesizing module 'multi_channel_register' (3#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:486]
+INFO: [Synth 8-256] done synthesizing module 'multi_channel_mutex' (4#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:680]
+WARNING: [Synth 8-6014] Unused sequential element Using_MultiIf_Mutex.Mutex_HW_Id_I_reg was removed.  [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1034]
+WARNING: [Synth 8-6014] Unused sequential element Write_Strobe_User_reg was removed.  [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:1088]
+INFO: [Synth 8-256] done synthesizing module 'mutex_core' (5#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:911]
+INFO: [Synth 8-256] done synthesizing module 'mutex' (6#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ipshared/f88c/hdl/mutex_v2_1_vh_rfs.vhd:2019]
+INFO: [Synth 8-256] done synthesizing module 'design_1_mutex_0_0' (7#1) [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ip/design_1_mutex_0_0/synth/design_1_mutex_0_0.vhd:140]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[31]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[30]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[29]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[28]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[27]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[26]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[25]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[24]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[23]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[22]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[21]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[20]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[19]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[18]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[17]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[16]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[15]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[14]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[13]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_AWADDR[12]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[31]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[30]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[29]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[28]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[27]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[26]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[25]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[24]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[23]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[22]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[21]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[20]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[19]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[18]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[17]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[16]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[15]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[14]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[13]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port S_AXI_ARADDR[12]
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port Mutex_Clk
+WARNING: [Synth 8-3331] design axi_decode__parameterized5 has unconnected port Mutex_Rst
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[31]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[30]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[29]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[28]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[27]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[26]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[25]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[24]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[23]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[22]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[21]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[20]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[19]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[18]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[17]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[16]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[15]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[14]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[13]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_AWADDR[12]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[31]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[30]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[29]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[28]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[27]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[26]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[25]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[24]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[23]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[22]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[21]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[20]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[19]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[18]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[17]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[16]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[15]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[14]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[13]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port S_AXI_ARADDR[12]
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port Mutex_Clk
+WARNING: [Synth 8-3331] design axi_decode__parameterized3 has unconnected port Mutex_Rst
+WARNING: [Synth 8-3331] design axi_decode__parameterized1 has unconnected port S_AXI_AWADDR[31]
+WARNING: [Synth 8-3331] design axi_decode__parameterized1 has unconnected port S_AXI_AWADDR[30]
+WARNING: [Synth 8-3331] design axi_decode__parameterized1 has unconnected port S_AXI_AWADDR[29]
+WARNING: [Synth 8-3331] design axi_decode__parameterized1 has unconnected port S_AXI_AWADDR[28]
+WARNING: [Synth 8-3331] design axi_decode__parameterized1 has unconnected port S_AXI_AWADDR[27]
+WARNING: [Synth 8-3331] design axi_decode__parameterized1 has unconnected port S_AXI_AWADDR[26]
+WARNING: [Synth 8-3331] design axi_decode__parameterized1 has unconnected port S_AXI_AWADDR[25]
+WARNING: [Synth 8-3331] design axi_decode__parameterized1 has unconnected port S_AXI_AWADDR[24]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1501.793 ; gain = 115.629 ; free physical = 8651 ; free virtual = 17234
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1501.793 ; gain = 115.629 ; free physical = 8646 ; free virtual = 17209
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1501.793 ; gain = 115.629 ; free physical = 8646 ; free virtual = 17209
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xczu3eg-sbva484-1-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ip/design_1_mutex_0_0/design_1_mutex_0_0_ooc.xdc] for cell 'U0'
+WARNING: [Constraints 18-633] Creating clock s_clocks with 4 sources. [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ip/design_1_mutex_0_0/design_1_mutex_0_0_ooc.xdc:6]
+Finished Parsing XDC File [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ip/design_1_mutex_0_0/design_1_mutex_0_0_ooc.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.srcs/sources_1/bd/design_1/ip/design_1_mutex_0_0/design_1_mutex_0_0_ooc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_mutex_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_mutex_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2414.387 ; gain = 0.000 ; free physical = 9932 ; free virtual = 18489
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Parsing XDC File [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.runs/design_1_mutex_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.runs/design_1_mutex_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2414.387 ; gain = 0.000 ; free physical = 9932 ; free virtual = 18489
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2414.387 ; gain = 0.000 ; free physical = 9931 ; free virtual = 18489
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2414.387 ; gain = 0.000 ; free physical = 9928 ; free virtual = 18486
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 2414.387 ; gain = 1028.223 ; free physical = 9726 ; free virtual = 18335
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3eg-sbva484-1-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 2414.387 ; gain = 1028.223 ; free physical = 9725 ; free virtual = 18334
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.runs/design_1_mutex_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 2414.387 ; gain = 1028.223 ; free physical = 9721 ; free virtual = 18331
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "Access_In_Progress" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Access_In_Progress" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:30 . Memory (MB): peak = 2414.387 ; gain = 1028.223 ; free physical = 9640 ; free virtual = 18245
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	               12 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 33    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input     12 Bit        Muxes := 7     
+	   2 Input      9 Bit        Muxes := 2     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 30    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module multi_channel_mutex 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 2     
+Module mutex_core 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	               12 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input     12 Bit        Muxes := 3     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 14    
+Module axi_decode 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_decode__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_decode__parameterized3 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_decode__parameterized5 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[22]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[21]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[20]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[20]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[19]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[19]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[18]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[18]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[17]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[17]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[16]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[15]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[14]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[13]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[12]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[11]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[10]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[9]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[8]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[7]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[6]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[5]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[4]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[3]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[2]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/SingleAccess/Mutex_Rd_Data_reg[1]' (FDRE) to 'U0/SingleAccess/Mutex_Rd_Data_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\SingleAccess/Mutex_Rd_Data_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[31].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[30].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[29].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[28].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[27].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[26].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[25].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[24].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[23].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[22].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[21].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[20].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[19].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[18].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[17].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[16].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[15].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[14].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[13].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[12].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[11].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[10].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_0.AXI_If_0/S_AXI_RDATA_DFF[9].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[31].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[30].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[29].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[28].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[27].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[26].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[25].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[24].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[23].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[22].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[21].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[20].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[19].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[18].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[17].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[16].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[15].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[14].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[13].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[12].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[11].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[10].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_1.AXI_If_1/S_AXI_RDATA_DFF[9].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[31].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[30].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[29].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[28].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[27].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[26].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[25].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[24].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[23].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[22].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[21].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[20].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[19].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[18].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[17].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[16].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[15].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[14].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[13].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[12].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[11].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[10].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_2.AXI_If_2/S_AXI_RDATA_DFF[9].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[31].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[30].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[29].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[28].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[27].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[26].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[25].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[24].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[23].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[22].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[21].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[20].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[19].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[18].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[17].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[16].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[15].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[14].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[13].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[12].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[11].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[10].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+WARNING: [Synth 8-3332] Sequential element (Using_AXI_3.AXI_If_3/S_AXI_RDATA_DFF[9].S_AXI_RDATA_FDRE) is unused and will be removed from module mutex.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:31 . Memory (MB): peak = 2414.387 ; gain = 1028.223 ; free physical = 9532 ; free virtual = 18139
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                                                                                       | Inference | Size (Depth x Width) | Primitives     | 
++------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|U0          | SingleAccess/No_HW_Protection.Normal_Mutex_Inst/Mutex_Store/Use_Multi_Ch_Reg.RAM_Storage/RAM_reg | Implied   | 16 x 9               | RAM16X1S x 9   | 
++------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:01:09 . Memory (MB): peak = 2646.223 ; gain = 1260.059 ; free physical = 8017 ; free virtual = 16634
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:10 . Memory (MB): peak = 2669.254 ; gain = 1283.090 ; free physical = 8254 ; free virtual = 16869
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                                                                                       | Inference | Size (Depth x Width) | Primitives     | 
++------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|U0          | SingleAccess/No_HW_Protection.Normal_Mutex_Inst/Mutex_Store/Use_Multi_Ch_Reg.RAM_Storage/RAM_reg | Implied   | 16 x 9               | RAM16X1S x 9   | 
++------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:01:10 . Memory (MB): peak = 2677.262 ; gain = 1291.098 ; free physical = 8257 ; free virtual = 16862
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:01:11 . Memory (MB): peak = 2677.262 ; gain = 1291.098 ; free physical = 8199 ; free virtual = 16805
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:01:11 . Memory (MB): peak = 2677.262 ; gain = 1291.098 ; free physical = 8196 ; free virtual = 16803
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:01:11 . Memory (MB): peak = 2677.262 ; gain = 1291.098 ; free physical = 8196 ; free virtual = 16812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:01:11 . Memory (MB): peak = 2677.262 ; gain = 1291.098 ; free physical = 8187 ; free virtual = 16804
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:01:11 . Memory (MB): peak = 2677.262 ; gain = 1291.098 ; free physical = 8185 ; free virtual = 16801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:01:11 . Memory (MB): peak = 2677.262 ; gain = 1291.098 ; free physical = 8183 ; free virtual = 16800
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |LUT1     |     5|
+|2     |LUT2     |    20|
+|3     |LUT3     |    59|
+|4     |LUT4     |     5|
+|5     |LUT5     |    21|
+|6     |LUT6     |    32|
+|7     |RAM16X1S |     9|
+|8     |FDRE     |   159|
++------+---------+------+
+
+Report Instance Areas: 
++------+-------------------------------------------+---------------------------+------+
+|      |Instance                                   |Module                     |Cells |
++------+-------------------------------------------+---------------------------+------+
+|1     |top                                        |                           |   310|
+|2     |  U0                                       |mutex                      |   310|
+|3     |    SingleAccess                           |mutex_core                 |    92|
+|4     |      \No_HW_Protection.Normal_Mutex_Inst  |multi_channel_mutex        |    38|
+|5     |        Mutex_Store                        |multi_channel_register     |    38|
+|6     |          \Use_Multi_Ch_Reg.RAM_Storage    |Gen_DRAM                   |    38|
+|7     |    \Using_AXI_0.AXI_If_0                  |axi_decode                 |    62|
+|8     |    \Using_AXI_1.AXI_If_1                  |axi_decode__parameterized1 |    63|
+|9     |    \Using_AXI_2.AXI_If_2                  |axi_decode__parameterized3 |    46|
+|10    |    \Using_AXI_3.AXI_If_3                  |axi_decode__parameterized5 |    46|
++------+-------------------------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:01:11 . Memory (MB): peak = 2677.262 ; gain = 1291.098 ; free physical = 8189 ; free virtual = 16804
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 696 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:48 . Memory (MB): peak = 2677.262 ; gain = 378.504 ; free physical = 8231 ; free virtual = 16836
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:01:11 . Memory (MB): peak = 2677.270 ; gain = 1291.098 ; free physical = 8238 ; free virtual = 16843
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2714.277 ; gain = 0.000 ; free physical = 8138 ; free virtual = 16751
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  RAM16X1S => RAM32X1S (RAMS32): 9 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+172 Infos, 196 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:01:12 . Memory (MB): peak = 2714.277 ; gain = 1328.234 ; free physical = 8199 ; free virtual = 16813
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2714.277 ; gain = 0.000 ; free physical = 8198 ; free virtual = 16812
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.runs/design_1_mutex_0_0_synth_1/design_1_mutex_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_mutex_0_0, cache-ID = 8c398da9b4a893dc
+INFO: [Coretcl 2-1174] Renamed 9 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2738.289 ; gain = 0.000 ; free physical = 8184 ; free virtual = 16796
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/ylxiao/ws_183/estream4fccm2021_1IP/workspace/vivado_prj/u96_demo/u96_demo.runs/design_1_mutex_0_0_synth_1/design_1_mutex_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_mutex_0_0_utilization_synth.rpt -pb design_1_mutex_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  2 17:26:17 2021...

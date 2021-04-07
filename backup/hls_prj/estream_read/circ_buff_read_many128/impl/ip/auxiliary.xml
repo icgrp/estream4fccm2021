@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="circ_buff_read_many128" xd:componentRef="circ_buff_read_many128" xd:initiationInterval="33553540" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(input)" xd:originalName="input" xd:direction="inout" xd:interfaceRef="m_axi_gmem_read" xd:busTypeRef="aximm" xd:dataWidth="128" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="input_V" xd:originalName="input_V" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_gmem_read" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="*(reset)" xd:originalName="reset" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:dataWidth="8" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="*(debug_register)" xd:originalName="debug_register" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:dataWidth="64" xd:offset="0x20" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="useable_words[]" xd:originalName="useable_words" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:dataWidth="8" xd:offset="0x30" xd:arraySize="4"/>
+  <xd:arg xd:name="fifo[0]" xd:originalName="fifo0" xd:direction="out" xd:interfaceRef="fifo_out_0_V" xd:busTypeRef="axis" xd:arraySize="1" xd:dataWidth="64"/>
+  <xd:arg xd:name="fifo[1]" xd:originalName="fifo1" xd:direction="out" xd:interfaceRef="fifo_out_1_V" xd:busTypeRef="axis" xd:arraySize="1" xd:dataWidth="64"/>
+  <xd:arg xd:name="fifo[2]" xd:originalName="fifo2" xd:direction="out" xd:interfaceRef="fifo_out_2_V" xd:busTypeRef="axis" xd:arraySize="1" xd:dataWidth="64"/>
+  <xd:arg xd:name="fifo[3]" xd:originalName="fifo3" xd:direction="out" xd:interfaceRef="fifo_out_3_V" xd:busTypeRef="axis" xd:arraySize="1" xd:dataWidth="64"/>
+  <xd:latencyEstimates xd:best-case="7" xd:worst-case="33553539" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="2881" xd:FF="2220" xd:BRAM="14" xd:DSP="1"/>
+</xd:acceleratorMap>
