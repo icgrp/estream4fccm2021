@@ -1,3 +1,6 @@
+# Paper
+The Embedded-Processor Stream Link is described in the [FCCM 2021 paper](paper/estream_fccm2021.pdf).
+
 # Estream Demo
 ## Description 
 This is a tutorial to show how to use software (SW) stream links and hardware
