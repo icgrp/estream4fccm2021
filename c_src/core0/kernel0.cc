@@ -15,7 +15,7 @@
 uint8_t perf = 0;
 
 #define DATA_BYTE_SIZE 512
-#define PRELOAD_NUM 64
+#define PRELOAD_NUM 512
 
 uint64_t receive_data[DATA_BYTE_SIZE/8];
 
@@ -136,7 +136,7 @@ int kernel_pl_sw( pr_flow::memory_t mem )
 
 int kernel_pl_hw( pr_flow::memory_t mem )
 {
-	int case_byte_list[9] = {512, 1024, 1536, 2048, 5120, 10240, 102400, 204800, 409600};
+	int case_byte_list[9] = {8192, 12368, 16384, 40960, 81920, 819200, 1638400, 6553699};
 	double tput_sum;
 	XTime timer_start;
 	XTime timer_end;
@@ -166,6 +166,8 @@ int kernel_pl_hw( pr_flow::memory_t mem )
 			XTime_GetTime(&timer_start);
 			// one read/write can process 128bits in the hardware stream.
 			// DATA_BYTE_SIZE should be divided by 16 (128/8).
+			int prefix_num = 0;
+
 			for(i=0; i<PRELOAD_NUM; i++){
 				tmp = (((uint64_t)i)<<32) | (uint64_t)i;
 				STREAM_WRITE(Core0_hw_tx0, tmp);

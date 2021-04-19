@@ -89,7 +89,7 @@ void kernel_pl_sw( pr_flow::memory_t mem )
 void kernel_pl_hw( pr_flow::memory_t mem )
 {
 	XTime timer_start;
-	int case_byte_list[9] = {512, 1024, 1536, 2048, 5120, 10240, 102400, 204800, 409600};
+	int case_byte_list[9] = {8192, 12368, 16384, 40960, 81920, 819200, 1638400, 6553699};
 	volatile XTime* ptr = (volatile XTime*)TIMER;
 	XTime_StartTimer();
 	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
