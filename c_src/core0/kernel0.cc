@@ -139,6 +139,7 @@ int kernel_pl_hw( pr_flow::memory_t mem )
 	int case_byte_list[9] = {512, 1024, 1536, 2048, 5120, 10240, 102400, 204800, 409600};
 	double tput_sum;
 	XTime timer_start;
+	XTime timer_end;
 	uint64_t data;
 	volatile XTime* ptr = (volatile XTime*)TIMER;
 	XTime_StartTimer();
@@ -155,13 +156,14 @@ int kernel_pl_hw( pr_flow::memory_t mem )
 	Core0_hw_tx0.start_stream();
 
 	printf("HW streams test begins!\n");
-	XTime_GetTime(&timer_start);
-	*ptr = timer_start;
+
+	//*ptr = timer_start;
 	uint64_t tmp;
 
 	for(int case_num = 0; case_num<9; case_num++){
 		tput_sum = 0;
 		for(int test_num=0; test_num < 100; test_num++){
+			XTime_GetTime(&timer_start);
 			// one read/write can process 128bits in the hardware stream.
 			// DATA_BYTE_SIZE should be divided by 16 (128/8).
 			for(i=0; i<PRELOAD_NUM; i++){
@@ -179,11 +181,11 @@ int kernel_pl_hw( pr_flow::memory_t mem )
 				data = STREAM_READ(Core0_hw_rx3);
 			}
 
-			XTime timer_end;
+
 			//XTime timer_start;
 			XTime_GetTime(&timer_end);
 
-			timer_start = *ptr;
+			//timer_start = *ptr;
 			double bytes = case_byte_list[case_num]; // * sizeof(uint64_t); // bytes
 			double gigabytes = bytes / 1000000000;
 			double seconds = ((double)(timer_end - timer_start) / (COUNTS_PER_SECOND)); // useconds
