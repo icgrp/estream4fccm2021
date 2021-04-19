@@ -57,13 +57,12 @@ void kernel_pl_mix( pr_flow::memory_t mem )
 
 void kernel_pl_sw( pr_flow::memory_t mem )
 {
-	XTime timer_start;
-	volatile XTime* ptr = (volatile XTime*)TIMER;
-	XTime_StartTimer();
-	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
 
-	int i=0;
 	uint64_t data;
+	int case_byte_list[9] = {512, 1024, 1536, 2048, 5120, 10240, 102400, 204800, 409600};
+	int case_num, i;
+
+
 	pr_flow::stream Core1_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 	pr_flow::stream Core1_sw1( pr_flow::stream_id_t::STREAM_ID_1, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 
@@ -72,24 +71,17 @@ void kernel_pl_sw( pr_flow::memory_t mem )
 
 	synchronize();
 	Core1_hw_rx0.start_stream();
-	for(i=0; i<DATA_BYTE_SIZE/8; i++){
-		//printf("We recieve");
-		data = STREAM_READ(Core1_sw0);
-		//printf("%08x_%08x\n", data>>32, data);
+
+	for(case_num = 0; case_num<9; case_num++){
+		for(int test_num=0; test_num < 100; test_num++){
+			for(i=0; i<case_byte_list[case_num]/8; i++){
+				//printf("We recieve");
+				data = STREAM_READ(Core1_sw0);
+				STREAM_WRITE(Core1_sw1, data);
+				//printf("%08x_%08x\n", data>>32, data);
+			}
+		}
 	}
-
-	XTime timer_end;
-	//XTime timer_start;
-	XTime_GetTime(&timer_end);
-
-	timer_start = *ptr;
-	double bytes = DATA_BYTE_SIZE;// * sizeof(uint64_t); // bytes
-	double gigabytes = bytes / 1000000000;
-	double seconds = ((double)(timer_end - timer_start) / (COUNTS_PER_SECOND)); // useconds
-	double tput = (gigabytes/seconds); // b/us ->gbps
-	printf("SW stream throughput ~ %f GB/s \n",tput);
-
-	printf("\n\nAll test DONE!\n");
 
 
 	synchronize();
@@ -102,6 +94,7 @@ void kernel_pl_hw( pr_flow::memory_t mem )
 {
 
 	int i, j;
+	int case_byte_list[9] = {512, 1024, 1536, 2048, 5120, 10240, 102400, 204800, 409600};
 	uint64_t data;
 	pr_flow::stream Core1_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 	pr_flow::stream Core1_sw1( pr_flow::stream_id_t::STREAM_ID_1, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
@@ -111,9 +104,17 @@ void kernel_pl_hw( pr_flow::memory_t mem )
 
 	synchronize();
 	Core1_hw_rx0.start_stream();
-	for(i=0; i<DATA_BYTE_SIZE/8; i++){
-		data = STREAM_READ(Core1_hw_rx0);
-		STREAM_WRITE(Core1_hw_tx1, data);
+
+
+	for(int case_num = 0; case_num<9; case_num++){
+		for(int test_num=0; test_num < 100; test_num++){
+			// one read/write can process 128bits in the hardware stream.
+			// DATA_BYTE_SIZE should be divided by 16 (128/8).
+			for(i=0; i<case_byte_list[case_num]/16; i++){
+				data = STREAM_READ(Core1_hw_rx0);
+				STREAM_WRITE(Core1_hw_tx1, data);
+			}
+		}
 	}
 
 

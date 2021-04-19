@@ -4,24 +4,24 @@ module handshake_cnt(
     input [31:0] cnt_limit,
     input s_axis_tvalid,
     output s_axis_tready,
-    input [63:0] s_axis_tdata,
+    input [127:0] s_axis_tdata,
     output m_axis_tvalid,
     input m_axis_tready,
-    output [63:0] m_axis_tdata,
+    output [127:0] m_axis_tdata,
     output reg [31:0] cycle_cnt,
     output reg [31:0] data_cnt
     );
 
     reg din_cnt;
 
-    //assign m_axis_tvalid = s_axis_tvalid;
-    assign m_axis_tvalid = din_cnt>0 ? 1 : 0;
+    assign m_axis_tvalid = s_axis_tvalid;
+    //assign m_axis_tvalid = din_cnt>0 ? 1 : 0;
     
     
     assign m_axis_tdata  = s_axis_tdata;
     
-    //assign s_axis_tready = m_axis_tready;
-    assign s_axis_tready = 1'b1;
+    assign s_axis_tready = m_axis_tready;
+    //assign s_axis_tready = 1'b1;
     
 
     always@(posedge clk) begin
@@ -58,5 +58,4 @@ module handshake_cnt(
     end
 
 endmodule
-
 

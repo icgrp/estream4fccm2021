@@ -15,6 +15,7 @@
 uint8_t perf = 0;
 
 #define DATA_BYTE_SIZE 512
+#define PRELOAD_NUM 64
 
 uint64_t receive_data[DATA_BYTE_SIZE/8];
 
@@ -66,11 +67,19 @@ int kernel_pl_sw( pr_flow::memory_t mem )
 {
 
 	XTime timer_start;
+	XTime timer_end;
+	int case_byte_list[9] = {512, 1024, 1536, 2048, 5120, 10240, 102400, 204800, 409600};
+	double tput_sum;
+	uint64_t data;
+	int case_num, i;
+
+
 	volatile XTime* ptr = (volatile XTime*)TIMER;
+
 	XTime_StartTimer();
 	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
 
-	uint64_t i;
+
 	pr_flow::stream Core0_sw0( pr_flow::stream_id_t::STREAM_ID_0, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 	pr_flow::stream Core0_sw3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 
@@ -81,29 +90,54 @@ int kernel_pl_sw( pr_flow::memory_t mem )
 	Core0_hw_tx0.start_stream();
 
 	printf("SW streams test begins!\n");
-	XTime_GetTime(&timer_start);
-	*ptr = timer_start;
 
-	for(i=0; i<DATA_BYTE_SIZE/8; i++){
-		uint64_t tmp;
-		tmp = (((uint64_t)i)<<32) | (uint64_t)i;
-		STREAM_WRITE(Core0_sw0, tmp);
+
+
+	for(case_num = 0; case_num<9; case_num++){
+
+
+		tput_sum = 0;
+		for(int test_num=0; test_num < 100; test_num++){
+			XTime_GetTime(&timer_start);
+			//*ptr = timer_start;
+			for(i=0; i<PRELOAD_NUM; i++){
+				uint64_t tmp;
+				tmp = (((uint64_t)i)<<32) | (uint64_t)i;
+				STREAM_WRITE(Core0_sw0, tmp);
+			}
+
+			for(i=0; i<case_byte_list[case_num]/8-PRELOAD_NUM; i++){
+				uint64_t tmp;
+				tmp = (((uint64_t)i)<<32) | (uint64_t)i;
+				STREAM_WRITE(Core0_sw0, tmp);
+				data = STREAM_READ(Core0_sw3);
+			}
+
+			for(i=0; i<PRELOAD_NUM; i++){
+				data = STREAM_READ(Core0_sw3);
+			}
+
+
+			XTime_GetTime(&timer_end);
+			//timer_start = *ptr;
+			double bytes = case_byte_list[case_num]; // * sizeof(uint64_t); // bytes
+			double gigabytes = bytes / 1000000000;
+			double seconds = ((double)(timer_end - timer_start) / (COUNTS_PER_SECOND)); // useconds
+			double tput = (gigabytes/seconds); // b/us ->gbps
+			tput_sum += tput;
+		}
+		printf("SW %d bytes, stream throughput ~ %f GB/s \n",case_byte_list[case_num], tput_sum/100);
 	}
-
-
-
+	printf("\n\nAll test DONE!\n");
 	synchronize();
-
-
-
-
 	return 0;
 }
 
 
 int kernel_pl_hw( pr_flow::memory_t mem )
 {
-
+	int case_byte_list[9] = {512, 1024, 1536, 2048, 5120, 10240, 102400, 204800, 409600};
+	double tput_sum;
 	XTime timer_start;
 	uint64_t data;
 	volatile XTime* ptr = (volatile XTime*)TIMER;
@@ -125,27 +159,43 @@ int kernel_pl_hw( pr_flow::memory_t mem )
 	*ptr = timer_start;
 	uint64_t tmp;
 
+	for(int case_num = 0; case_num<9; case_num++){
+		tput_sum = 0;
+		for(int test_num=0; test_num < 100; test_num++){
+			// one read/write can process 128bits in the hardware stream.
+			// DATA_BYTE_SIZE should be divided by 16 (128/8).
+			for(i=0; i<PRELOAD_NUM; i++){
+				tmp = (((uint64_t)i)<<32) | (uint64_t)i;
+				STREAM_WRITE(Core0_hw_tx0, tmp);
+			}
 
-	for(i=0; i<DATA_BYTE_SIZE/8; i++){
-			tmp = (((uint64_t)i)<<32) | (uint64_t)i;
-			STREAM_WRITE(Core0_hw_tx0, tmp);
+			for(i=0; i<case_byte_list[case_num]/16-PRELOAD_NUM; i++){
+				tmp = (((uint64_t)i)<<32) | (uint64_t)i;
+				STREAM_WRITE(Core0_hw_tx0, tmp);
+				data = STREAM_READ(Core0_hw_rx3);
+			}
+
+			for(i=0; i<PRELOAD_NUM; i++){
+				data = STREAM_READ(Core0_hw_rx3);
+			}
+
+			XTime timer_end;
+			//XTime timer_start;
+			XTime_GetTime(&timer_end);
+
+			timer_start = *ptr;
+			double bytes = case_byte_list[case_num]; // * sizeof(uint64_t); // bytes
+			double gigabytes = bytes / 1000000000;
+			double seconds = ((double)(timer_end - timer_start) / (COUNTS_PER_SECOND)); // useconds
+			double tput = (gigabytes/seconds); // b/us ->gbps
+			tput_sum += tput;
+		}
+		printf("HW %d bytes, stream throughput ~ %f GB/s \n",case_byte_list[case_num], tput_sum/100);
 	}
 
-	for(i=0; i<DATA_BYTE_SIZE/8; i++){
-			data = STREAM_READ(Core0_hw_rx3);
-	}
 
-	XTime timer_end;
-	//XTime timer_start;
-	XTime_GetTime(&timer_end);
 
-	timer_start = *ptr;
-	double bytes = DATA_BYTE_SIZE; // * sizeof(uint64_t); // bytes
-	printf("sizeof(uint64_t)=%d\n", sizeof(uint64_t));
-	double gigabytes = bytes / 1000000000;
-	double seconds = ((double)(timer_end - timer_start) / (COUNTS_PER_SECOND)); // useconds
-	double tput = (gigabytes/seconds); // b/us ->gbps
-	printf("HW stream throughput ~ %f GB/s \n",tput);
+
 
 	printf("\n\nAll test DONE!\n");
 
