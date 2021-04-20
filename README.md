@@ -124,15 +124,20 @@ as step 10 in tutorial 1. You should see the core0 will final get data_send\*2\*
 
 ## Tutorial 3
 This tutorial will show you how to measure the throughput of SW stream and HW stream.
-We will measure the througuput of a stream loop (*core0->core1-core2-core3-core0*) . 
-
+We will measure the througuput between core0 and core1. These 2 cores can be connected
+by either SW stream or HW stream.
 
 1. Open main.cc file under **core0->src->main.cc**. Comment **#define TEST_MODE CIRCLE**
 and uncoment **#define TEST_MODE SW_THP**. Make the same changes for core1-3.
 
 ![](./images/comment_sw.png)
 
-2. Change the Optimization level from **O0** to **O3**. You can right click project core0 and choose properties.
+2. Open kernel0.cc file under **core0->src->kernel0.cc**. Increase **DATA_BYTE_SIZE** from 1024 to 409600.
+Make the same changes for core1.
+
+![](./images/size.png)
+
+3. Change the Optimization level from **O0** to **O3**. You can right click project core0 and choose properties.
 
 ![](./images/property.jpg)
 
@@ -140,8 +145,6 @@ Click **C/C++ Build->Settings->ARM v8 g++ compiler->Optimization** as below.
 Make the same changes for core1-3.
 
 ![](./images/O3.jpg)
-
-3. Repeate steps 1-2 for core1-3.
 
 4. Rebuild core0-3 project. Click **Run->Run Configurations->Run** again to lauch on hardware as Tutorial Step 9-11.
 You should see the SW throughput between 
