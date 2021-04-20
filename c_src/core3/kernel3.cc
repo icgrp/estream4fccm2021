@@ -55,7 +55,7 @@ void kernel_pl_sw( pr_flow::memory_t mem )
 {
 
 
-	int case_byte_list[9] = {512, 1024, 1536, 2048, 5120, 10240, 102400, 204800, 409600};
+	int case_byte_list[9] = {8192, 12368, 16384, 40960, 81920, 819200, 1638400, 6553600};
 	int case_num, i;
 	uint64_t data;
 	pr_flow::stream Core3_sw2( pr_flow::stream_id_t::STREAM_ID_2, pr_flow::direction_t::SW_SHARED,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
@@ -67,7 +67,7 @@ void kernel_pl_sw( pr_flow::memory_t mem )
 
 
 	synchronize();
-	for(case_num = 0; case_num<9; case_num++){
+	for(case_num = 0; case_num<8; case_num++){
 		for(int test_num=0; test_num < 100; test_num++){
 			for(i=0; i<case_byte_list[case_num]/8; i++){
 				//printf("We recieve");
@@ -90,7 +90,7 @@ void kernel_pl_sw( pr_flow::memory_t mem )
 void kernel_pl_hw( pr_flow::memory_t mem )
 {
 	XTime timer_start;
-	int case_byte_list[9] = {8192, 12368, 16384, 40960, 81920, 819200, 1638400, 6553699};
+	int case_byte_list[9] = {8192, 12368, 16384, 40960, 81920, 819200, 1638400, 6553600};
 	volatile XTime* ptr = (volatile XTime*)TIMER;
 	XTime_StartTimer();
 	Xil_SetTlbAttributes((UINTPTR)ptr, NORM_NONCACHE);
@@ -101,7 +101,7 @@ void kernel_pl_hw( pr_flow::memory_t mem )
 	pr_flow::stream Core3_hw_tx3( pr_flow::stream_id_t::STREAM_ID_3, pr_flow::direction_t::TX,pr_flow::width_t::U32_BITS, pr_flow::axi_port_t::HP0,mem );
 
 	synchronize();
-	for(int case_num = 0; case_num<9; case_num++){
+	for(int case_num = 0; case_num<8; case_num++){
 		for(int test_num=0; test_num < 100; test_num++){
 			// one read/write can process 128bits in the hardware stream.
 			// DATA_BYTE_SIZE should be divided by 16 (128/8).

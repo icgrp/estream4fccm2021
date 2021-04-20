@@ -68,7 +68,7 @@ int kernel_pl_sw( pr_flow::memory_t mem )
 
 	XTime timer_start;
 	XTime timer_end;
-	int case_byte_list[9] = {512, 1024, 1536, 2048, 5120, 10240, 102400, 204800, 409600};
+	int case_byte_list[9] = {8192, 12368, 16384, 40960, 81920, 819200, 1638400, 6553600};
 	double tput_sum;
 	uint64_t data;
 	int case_num, i;
@@ -93,7 +93,7 @@ int kernel_pl_sw( pr_flow::memory_t mem )
 
 
 
-	for(case_num = 0; case_num<9; case_num++){
+	for(case_num = 0; case_num<8; case_num++){
 
 
 		tput_sum = 0;
@@ -136,7 +136,7 @@ int kernel_pl_sw( pr_flow::memory_t mem )
 
 int kernel_pl_hw( pr_flow::memory_t mem )
 {
-	int case_byte_list[9] = {8192, 12368, 16384, 40960, 81920, 819200, 1638400, 6553699};
+	int case_byte_list[9] = {8192, 12368, 16384, 40960, 81920, 819200, 1638400, 6553600};
 	double tput_sum;
 	XTime timer_start;
 	XTime timer_end;
@@ -160,7 +160,7 @@ int kernel_pl_hw( pr_flow::memory_t mem )
 	//*ptr = timer_start;
 	uint64_t tmp;
 
-	for(int case_num = 0; case_num<9; case_num++){
+	for(int case_num = 0; case_num<8; case_num++){
 		tput_sum = 0;
 		for(int test_num=0; test_num < 100; test_num++){
 			XTime_GetTime(&timer_start);
