@@ -1,10 +1,12 @@
 module my_design(
-    input [63:0] s_axis_tdata,
+    input [127:0] s_axis_tdata,
     output s_axis_tready,
     input s_axis_tvalid,
-    output [63:0] m_axis_tdata,
+    output [127:0] m_axis_tdata,
     input m_axis_tready,
-    output m_axis_tvalid
+    output m_axis_tvalid,
+    input s_axis_aclk,
+    input s_axis_aresetn
     );
     
     
