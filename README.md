@@ -135,8 +135,6 @@ and uncoment **#define TEST_MODE SW_THP**. Make the same changes for core1-3.
 2. Open kernel0.cc file under **core0->src->kernel0.cc**. Increase **DATA_BYTE_SIZE** from 1024 to 409600.
 Make the same changes for core1.
 
-![](./images/size.png)
-
 3. Change the Optimization level from **O0** to **O3**. You can right click project core0 and choose properties.
 
 ![](./images/property.jpg)
@@ -166,15 +164,14 @@ You should see the HW throughput between
 
 |  Transfer Size |  SW stream |  HW Stream |
 |:--------------:|:----------:|:----------:|
-|  512 Bytes     |  80.5 MB/s |14.83 MB/s  |
-|  1024 Bytes    | 110.0 MB/s |18.06 MB/s  |
-|  1536 Bytes    | 116.4 MB/s |20.01 MB/s  |
-|  2048 Bytes    | 121.2 MB/s |20.71 MB/s  |
-|  5120 Bytes    | 135.0 MB/s |24.48 MB/s  |
-|  10240 Bytes   | 155.0 MB/s |34.34 MB/s  |
-| 102400 Bytes   | 180.7 MB/s |45.31 MB/s  |
-| 204800 Bytes   | 180.7 MB/s |55.67 MB/s  |
-| 409600 Bytes   | 180.7 MB/s |54.71 MB/s  |
+|  8192 Bytes    | 130.9 MB/s |79.2 MB/s   |
+|  12368 Bytes   | 133.9 MB/s |80.4 MB/s   |
+|  16384 Bytes   | 135.0 MB/s |83.0 MB/s   |
+|  40960 Bytes   | 137.0 MB/s |86.9 MB/s   |
+|  81920 Bytes   | 137.9 MB/s |87.9 MB/s   |
+|  819200 Bytes  | 138.5 MB/s |89.2 MB/s   |
+| 1638400 Bytes  | 138.5 MB/s |90.4 MB/s   |
+| 6553600 Bytes  | 138.5 MB/s |91.0 MB/s   |
 
 
 
